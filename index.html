@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Independent Industrial Technology Decision Reviews & Technology Roadmapping for South African Mining & Heavy Industry. By Thabo Samuel Makhorole, ex-Principal Engineer at Komatsu, Epiroc & Hexagon Mining.">
+    <meta name="description" content="Independent Industrial Technology Decision Reviews & Technology Roadmapping for South African Mining & Heavy Industry. Led by Samuel Makhorole, ex-Principal Engineer at Komatsu, Epiroc & Hexagon Mining.">
     <title>IndTech Decision Labs SA | Independent Tech Reviews & Roadmapping</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -25,23 +25,62 @@
         .hero-bg {
             background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
         }
-        
-        .section-header {
-            position: relative;
+
+        /* Revised Contact Form Styling */
+        .contact-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.25);
+            box-shadow: 0 25px 50px -12px rgb(0 31 63 / 0.25);
         }
         
-        .section-header::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: #ff6600;
+        .form-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+            color: rgba(255,255,255,0.85);
+        }
+        
+        .form-input {
+            background: rgba(255,255,255,0.95);
+            border: 2px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #001f3f;
+        }
+        
+        .form-input:focus {
+            border-color: #ff6600;
+            box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.25);
+            transform: translateY(-1px);
+        }
+        
+        .form-textarea {
+            background: rgba(255,255,255,0.95);
+            border: 2px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #001f3f;
+            resize: vertical;
+        }
+        
+        .form-textarea:focus {
+            border-color: #ff6600;
+            box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.25);
+            transform: translateY(-1px);
+        }
+        
+        .submit-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .submit-btn:hover {
+            background-color: #e55a00;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 10px 15px -3px rgb(255 102 0 / 0.3);
         }
     </style>
 </head>
 <body class="tailwind-ready">
+
     <!-- NAVBAR -->
     <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -57,15 +96,11 @@
                 <a href="#services" class="hover:text-[#ff6600] transition-colors">Services</a>
                 <a href="#why-us" class="hover:text-[#ff6600] transition-colors">Why Us</a>
                 <a href="#pricing" class="hover:text-[#ff6600] transition-colors">Pricing</a>
-                <a href="#about" class="hover:text-[#ff6600] transition-colors">About Thabo</a>
+                <a href="#about" class="hover:text-[#ff6600] transition-colors">About IndTech</a>
             </div>
             
             <div class="flex items-center gap-x-4">
-                <a href="https://linkedin.com/in/thabo-makhorole-computer-engineer" target="_blank" 
-                   class="text-gray-600 hover:text-[#ff6600] transition-colors">
-                    <i class="fa-brands fa-linkedin text-xl"></i>
-                </a>
-                <a href="mailto:tbose15@gmail.com" 
+                <a href="#contact" 
                    class="px-6 py-2.5 bg-[#ff6600] text-white font-semibold rounded-2xl hover:bg-orange-600 transition-all flex items-center gap-x-2 text-sm">
                     <i class="fa-solid fa-envelope"></i>
                     GET IN TOUCH
@@ -92,7 +127,7 @@
                 
                 <p class="text-xl text-gray-200 mb-8">
                     De-risk your automation, IoT, fleet management and green-tech investments.<br>
-                    Delivered by Thabo Samuel Makhorole — ex-Principal Engineer at Komatsu, Epiroc &amp; Hexagon Mining.
+                    Delivered by Samuel Makhorole — ex-Principal Engineer at Komatsu, Epiroc &amp; Hexagon Mining.
                 </p>
                 
                 <div class="flex flex-wrap gap-4">
@@ -135,7 +170,6 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
                 <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all">
                     <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6">
                         <i class="fa-solid fa-clipboard-check text-3xl"></i>
@@ -145,7 +179,6 @@
                     <div class="text-sm font-medium text-[#ff6600]">4–6 weeks • R850k – R3.8M</div>
                 </div>
                 
-                <!-- Service 2 -->
                 <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all">
                     <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6">
                         <i class="fa-solid fa-road text-3xl"></i>
@@ -155,7 +188,6 @@
                     <div class="text-sm font-medium text-[#ff6600]">3–5 weeks • R1.2M – R4.5M</div>
                 </div>
                 
-                <!-- Service 3 -->
                 <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all bg-gradient-to-br from-[#ff6600] to-orange-600 text-white">
                     <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                         <i class="fa-solid fa-gem text-3xl"></i>
@@ -176,7 +208,7 @@
                 <div>
                     <h2 class="text-4xl font-bold heading-font mb-6">Why Mines Choose IndTech Decision Labs SA</h2>
                     <ul class="space-y-6">
-                        <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>Real credibility</strong> — I’ve commissioned the exact systems I now review (Komatsu FMS, Epiroc automation, Hexagon safety systems).</div></li>
+                        <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>Real credibility</strong> — Commissioned the exact systems we now review (Komatsu FMS, Epiroc automation, Hexagon safety systems).</div></li>
                         <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>Mining-hardened expertise</strong> — 15+ years in live production environments across embedded systems, Linux/Docker, cloud integrations and safety-critical deployments.</div></li>
                         <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>Truly independent</strong> — No vendor affiliations. Objective recommendations only.</div></li>
                         <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>JET &amp; B-BBEE ready</strong> — Every deliverable addresses localisation, ESG, skills and funding compliance.</div></li>
@@ -245,105 +277,118 @@
         </div>
     </section>
 
-    <!-- ABOUT THABO -->
+    <!-- ABOUT INDTECH -->
     <section id="about" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-5">
                     <div class="aspect-square bg-gray-200 rounded-3xl overflow-hidden">
-                        <!-- REPLACE WITH YOUR PHOTO -->
-                        <img src="https://via.placeholder.com/600x600/001f3f/ffffff?text=Thabo+Samuel+Makhorole" 
-                             alt="Thabo Samuel Makhorole" class="w-full h-full object-cover">
+                        <img src="https://via.placeholder.com/600x600/001f3f/ffffff?text=Samuel+Makhorole" 
+                             alt="Samuel Makhorole – Founder &amp; Principal Consultant" class="w-full h-full object-cover">
                     </div>
                 </div>
                 <div class="md:col-span-7">
-                    <h2 class="text-4xl font-bold heading-font mb-6">Meet Thabo Samuel Makhorole</h2>
+                    <h2 class="text-4xl font-bold heading-font mb-6">About IndTech Decision Labs SA</h2>
                     <p class="text-lg text-gray-700 mb-8">
-                        Principal Systems &amp; Software Engineer with 15+ years delivering mission-critical mining technology solutions. 
-                        Former Principal Engineer at Komatsu Modular Mining, Epiroc, Hexagon Mining, Bosch IoT and Orica Ground Probe.
+                        IndTech Decision Labs SA is a specialist independent consultancy that helps South African mines and heavy industry players make confident, de-risked technology decisions in the era of the Just Energy Transition.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8">
+                        We combine rigorous technical validation with practical strategic roadmapping — all delivered with deep mining-domain expertise and zero vendor bias.
                     </p>
                     <div class="grid grid-cols-2 gap-6 text-sm">
                         <div class="space-y-4">
-                            <div><strong>Expertise:</strong> Fleet Management Systems, Underground Automation, Collision Avoidance, Industrial IoT, Azure/AWS, Linux/Docker/Node-RED</div>
-                            <div><strong>Education:</strong> Master of Computing (expected June 2026), BTech Computer Systems</div>
+                            <div><strong>Founded &amp; Led by:</strong> Samuel Makhorole — former Principal Systems &amp; Software Engineer at Komatsu Modular Mining, Epiroc, Hexagon Mining, Bosch IoT and Orica Ground Probe</div>
+                            <div><strong>Core Focus:</strong> Fleet Management Systems, Underground Automation, Industrial IoT, Cloud Integrations, Safety-Critical Systems, JET-aligned green tech</div>
                         </div>
                         <div class="space-y-4">
-                            <div><strong>Certifications:</strong> PMBOK, Lean Six Sigma, ISO 55000, Agile, SQL Server, Linux</div>
-                            <div><strong>Awards:</strong> Shell Project Leadership Excellence • Hexagon Outstanding Execution</div>
+                            <div><strong>Our Promise:</strong> Truly independent, engineer-led reviews and roadmaps that deliver measurable value in harsh South African operating conditions</div>
+                            <div><strong>Credentials:</strong> ISO 55000, Lean Six Sigma, PMBOK, Master of Computing (expected 2026), Shell &amp; Hexagon award-winning project leadership</div>
                         </div>
                     </div>
                     <a href="https://linkedin.com/in/thabo-makhorole-computer-engineer" target="_blank" 
                        class="mt-8 inline-flex items-center gap-x-2 text-[#ff6600] font-medium">
-                        View full CV on LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Connect with Samuel Makhorole on LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA / CONTACT -->
+    <!-- REVISED CONTACT FORM -->
     <section id="contact" class="py-20 bg-[#001f3f] text-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold heading-font mb-6">Ready to de-risk your next technology decision?</h2>
-            <p class="text-xl text-white/80 mb-10">Start with a complimentary 45-minute Tech Decision Diagnostic — no obligation.</p>
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold heading-font mb-6">Ready to de-risk your next technology decision?</h2>
+                <p class="text-xl text-white/80">Start with a complimentary 45-minute Tech Decision Diagnostic — no obligation.</p>
+            </div>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:0787180793" 
-                   class="px-10 py-5 bg-white text-[#001f3f] font-semibold rounded-3xl flex items-center justify-center gap-x-3 text-lg">
-                    <i class="fa-solid fa-phone"></i>
+            <!-- Revised & Polished Contact Form -->
+            <form action="https://formspree.io/f/xqegeaag" method="POST" class="contact-card max-w-2xl mx-auto rounded-3xl p-8 md:p-10">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label block mb-2">Your Name</label>
+                        <input type="text" name="name" required 
+                               class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400">
+                    </div>
+                    <div>
+                        <label class="form-label block mb-2">Company / Mine</label>
+                        <input type="text" name="company" 
+                               class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400">
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <label class="form-label block mb-2">Email Address</label>
+                    <input type="email" name="email" required 
+                           class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400">
+                </div>
+                
+                <div class="mt-6">
+                    <label class="form-label block mb-2">Phone Number</label>
+                    <input type="tel" name="phone" 
+                           class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400">
+                </div>
+                
+                <div class="mt-6">
+                    <label class="form-label block mb-2">Tell us about your technology decision or project</label>
+                    <textarea name="message" rows="5" required 
+                              class="form-textarea w-full px-6 py-4 rounded-3xl text-base placeholder:text-gray-400"></textarea>
+                </div>
+                
+                <button type="submit"
+                        class="submit-btn mt-8 w-full bg-[#ff6600] text-white font-semibold py-5 rounded-3xl flex items-center justify-center gap-x-3 text-lg">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    SEND MESSAGE – LET’S START
+                </button>
+                
+                <p class="text-center text-white/70 text-xs mt-6 flex items-center justify-center gap-x-1">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    We reply within 24 hours • Your information stays private
+                </p>
+            </form>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center mt-12 text-sm">
+                <a href="tel:0787180793" class="flex items-center justify-center gap-x-3 text-white/80 hover:text-white transition-colors">
+                    <i class="fa-solid fa-phone text-2xl"></i>
                     078 718 0793
                 </a>
-                <a href="mailto:tbose15@gmail.com" 
-                   class="px-10 py-5 border border-white font-semibold rounded-3xl flex items-center justify-center gap-x-3 text-lg">
-                    <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:tbose15@gmail.com" class="flex items-center justify-center gap-x-3 text-white/80 hover:text-white transition-colors">
+                    <i class="fa-solid fa-envelope text-2xl"></i>
                     tbose15@gmail.com
                 </a>
             </div>
             
-            <p class="text-white/60 text-sm mt-10">Midrand, Johannesburg • Available for site visits across South Africa</p>
+            <p class="text-center text-white/60 text-sm mt-8">Midrand, Johannesburg • Site visits across South Africa welcome</p>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="bg-gray-900 text-white/70 py-12">
         <div class="max-w-7xl mx-auto px-6 text-center text-sm">
-            <p>© 2026 IndTech Decision Labs SA • Thabo Samuel Makhorole • All Rights Reserved</p>
+            <p>© 2026 IndTech Decision Labs SA • Samuel Makhorole • All Rights Reserved</p>
             <p class="mt-2">Built as a single-file GitHub Pages site • Independent • Mining-focused • JET-compliant</p>
         </div>
     </footer>
 
-    <script>
-        // Initialize Tailwind
-        function initializeTailwind() {
-            return {
-                config(userConfig = {}) {
-                    return {
-                        content: [],
-                        theme: {
-                            extend: {
-                                colors: {
-                                    primary: '#ff6600'
-                                }
-                            }
-                        },
-                        ...userConfig,
-                    }
-                },
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: '#ff6600'
-                        }
-                    }
-                }
-            }
-        }
-        
-        // Run on load
-        document.addEventListener('DOMContentLoaded', () => {
-            const config = initializeTailwind().config()
-            return config
-        })
-    </script>
 </body>
 </html>
