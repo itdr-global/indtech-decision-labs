@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Independent Industrial Technology Decision Reviews & Technology Roadmapping for South African Mining & Heavy Industry. By Thabo Samuel Makhorole, ex-Principal Engineer at Komatsu, Epiroc & Hexagon Mining.">
+    <title>IndTech Decision Labs SA | Independent Tech Reviews & Roadmapping</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        
+        :root {
+            --primary-orange: #ff6600;
+        }
+        
+        .tailwind-ready {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #ff6600;
+        }
+    </style>
+</head>
+<body class="tailwind-ready">
+    <!-- NAVBAR -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-10 h-10 bg-[#ff6600] rounded-xl flex items-center justify-center text-white font-bold text-2xl">ID</div>
+                <div>
+                    <span class="text-2xl font-bold heading-font tracking-tight">IndTech</span>
+                    <span class="text-2xl font-semibold text-gray-700">Decision Labs SA</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#services" class="hover:text-[#ff6600] transition-colors">Services</a>
+                <a href="#why-us" class="hover:text-[#ff6600] transition-colors">Why Us</a>
+                <a href="#pricing" class="hover:text-[#ff6600] transition-colors">Pricing</a>
+                <a href="#about" class="hover:text-[#ff6600] transition-colors">About Thabo</a>
+            </div>
+            
+            <div class="flex items-center gap-x-4">
+                <a href="https://linkedin.com/in/thabo-makhorole-computer-engineer" target="_blank" 
+                   class="text-gray-600 hover:text-[#ff6600] transition-colors">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                </a>
+                <a href="mailto:tbose15@gmail.com" 
+                   class="px-6 py-2.5 bg-[#ff6600] text-white font-semibold rounded-2xl hover:bg-orange-600 transition-all flex items-center gap-x-2 text-sm">
+                    <i class="fa-solid fa-envelope"></i>
+                    GET IN TOUCH
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 text-white text-sm font-medium px-4 py-2 rounded-3xl mb-6">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6600] opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-[#ff6600]"></span>
+                    </span>
+                    JUST ENERGY TRANSITION READY
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl font-bold heading-font leading-none tracking-tighter mb-6">
+                    Independent Technology<br>Decision Reviews &amp;<br>Roadmapping for South<br>African Mining &amp; Industry
+                </h1>
+                
+                <p class="text-xl text-gray-200 mb-8">
+                    De-risk your automation, IoT, fleet management and green-tech investments.<br>
+                    Delivered by Thabo Samuel Makhorole — ex-Principal Engineer at Komatsu, Epiroc &amp; Hexagon Mining.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" 
+                       class="px-8 py-4 bg-white text-[#001f3f] font-semibold rounded-3xl flex items-center gap-x-3 hover:shadow-xl transition-all">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        START WITH A FREE DIAGNOSTIC
+                    </a>
+                    <a href="https://github.com/YOUR-USERNAME/indtech-decision-labs/raw/main/IndTech-Brochure.pdf" 
+                       class="px-8 py-4 border border-white text-white font-semibold rounded-3xl flex items-center gap-x-3 hover:bg-white/10 transition-all">
+                        <i class="fa-solid fa-download"></i>
+                        DOWNLOAD BROCHURE
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex items-center gap-x-8 text-sm">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-check text-[#ff6600]"></i>
+                        <span>15+ years mining tech delivery</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-check text-[#ff6600]"></i>
+                        <span>JET &amp; B-BBEE aligned</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-check text-[#ff6600]"></i>
+                        <span>Truly independent — no vendor ties</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font mb-3">Core Services</h2>
+                <p class="text-gray-600 max-w-md mx-auto">Independent validation and strategic planning that actually works in South African mining conditions.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6">
+                        <i class="fa-solid fa-clipboard-check text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Independent Technology Decision Review</h3>
+                    <p class="text-gray-600 mb-6">Objective technical due diligence, risk assessment, benchmarking and go/no-go recommendation for any automation, IoT, FMS or green-tech solution.</p>
+                    <div class="text-sm font-medium text-[#ff6600]">4–6 weeks • R850k – R3.8M</div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6">
+                        <i class="fa-solid fa-road text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Mining-Specific Technology Roadmap</h3>
+                    <p class="text-gray-600 mb-6">1-3-5-10 year roadmap using Cambridge T-Plan/S-Plan framework — tailored for JET, localisation, B-BBEE and operational realities.</p>
+                    <div class="text-sm font-medium text-[#ff6600]">3–5 weeks • R1.2M – R4.5M</div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all bg-gradient-to-br from-[#ff6600] to-orange-600 text-white">
+                    <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-gem text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Bundled Review + Roadmap</h3>
+                    <p class="text-white/90 mb-6">Most popular package: Full independent validation plus board-ready strategic roadmap with implementation plan.</p>
+                    <div class="text-sm font-medium">8–12 weeks • R2.8M – R6.0M</div>
+                    <span class="inline-block mt-6 text-xs px-4 py-1 bg-white/20 rounded-3xl">RECOMMENDED FOR MAXIMUM VALUE</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why-us" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold heading-font mb-6">Why Mines Choose IndTech Decision Labs SA</h2>
+                    <ul class="space-y-6">
+                        <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>Real credibility</strong> — I’ve commissioned the exact systems I now review (Komatsu FMS, Epiroc automation, Hexagon safety systems).</div></li>
+                        <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>Mining-hardened expertise</strong> — 15+ years in live production environments across embedded systems, Linux/Docker, cloud integrations and safety-critical deployments.</div></li>
+                        <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>Truly independent</strong> — No vendor affiliations. Objective recommendations only.</div></li>
+                        <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>JET &amp; B-BBEE ready</strong> — Every deliverable addresses localisation, ESG, skills and funding compliance.</div></li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-3xl p-8 shadow-sm">
+                    <h3 class="font-semibold text-lg mb-6 flex items-center gap-x-2"><i class="fa-solid fa-award"></i> Recognised Excellence</h3>
+                    <div class="space-y-4 text-sm">
+                        <div class="flex justify-between"><span class="text-gray-600">Shell Special Recognition Award</span><span class="font-medium">Project Leadership Excellence</span></div>
+                        <div class="flex justify-between"><span class="text-gray-600">Hexagon Mining Recognition Award</span><span class="font-medium">Outstanding Project Execution</span></div>
+                        <div class="flex justify-between"><span class="text-gray-600">ISO 55000 &amp; Lean Six Sigma Certified</span><span class="font-medium">Asset Management &amp; Process Excellence</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font mb-3">Investment Options</h2>
+                <p class="text-gray-600">Clear, transparent pricing tailored to your needs</p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full max-w-4xl mx-auto border-collapse">
+                    <thead>
+                        <tr class="border-b-2 border-[#ff6600]">
+                            <th class="text-left py-5 px-6 font-medium">Service Option</th>
+                            <th class="text-left py-5 px-6 font-medium">Description</th>
+                            <th class="text-center py-5 px-6 font-medium">Duration</th>
+                            <th class="text-right py-5 px-6 font-medium">Investment (ex VAT)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        <tr>
+                            <td class="py-6 px-6 font-semibold">Full Bundled Package</td>
+                            <td class="py-6 px-6 text-gray-600">Independent Decision Review + Mining-Specific Technology Roadmap</td>
+                            <td class="py-6 px-6 text-center">8–12 weeks</td>
+                            <td class="py-6 px-6 text-right font-semibold text-[#ff6600]">R2.8M – R6.0M</td>
+                        </tr>
+                        <tr>
+                            <td class="py-6 px-6 font-semibold">Decision Review Only</td>
+                            <td class="py-6 px-6 text-gray-600">Phase 1: Independent technical validation &amp; go/no-go</td>
+                            <td class="py-6 px-6 text-center">4–6 weeks</td>
+                            <td class="py-6 px-6 text-right font-semibold text-[#ff6600]">R0.85M – R3.8M</td>
+                        </tr>
+                        <tr>
+                            <td class="py-6 px-6 font-semibold">Roadmap Only</td>
+                            <td class="py-6 px-6 text-gray-600">Phase 2: Strategic 1-3-5-10 year roadmap</td>
+                            <td class="py-6 px-6 text-center">3–5 weeks</td>
+                            <td class="py-6 px-6 text-right font-semibold text-[#ff6600]">R1.2M – R4.5M</td>
+                        </tr>
+                        <tr>
+                            <td class="py-6 px-6 font-semibold">Annual Retainer</td>
+                            <td class="py-6 px-6 text-gray-600">Roadmap refresh + quarterly tech assurance + JET updates</td>
+                            <td class="py-6 px-6 text-center">12 months</td>
+                            <td class="py-6 px-6 text-right font-semibold text-[#ff6600]">R400k – R950k / year</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p class="text-center text-xs text-gray-500 mt-8">Exact fee finalised after scoping call • Travel outside Gauteng billed at cost • Prices valid 30 days</p>
+        </div>
+    </section>
+
+    <!-- ABOUT THABO -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5">
+                    <div class="aspect-square bg-gray-200 rounded-3xl overflow-hidden">
+                        <!-- REPLACE WITH YOUR PHOTO -->
+                        <img src="https://via.placeholder.com/600x600/001f3f/ffffff?text=Thabo+Samuel+Makhorole" 
+                             alt="Thabo Samuel Makhorole" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:col-span-7">
+                    <h2 class="text-4xl font-bold heading-font mb-6">Meet Thabo Samuel Makhorole</h2>
+                    <p class="text-lg text-gray-700 mb-8">
+                        Principal Systems &amp; Software Engineer with 15+ years delivering mission-critical mining technology solutions. 
+                        Former Principal Engineer at Komatsu Modular Mining, Epiroc, Hexagon Mining, Bosch IoT and Orica Ground Probe.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 text-sm">
+                        <div class="space-y-4">
+                            <div><strong>Expertise:</strong> Fleet Management Systems, Underground Automation, Collision Avoidance, Industrial IoT, Azure/AWS, Linux/Docker/Node-RED</div>
+                            <div><strong>Education:</strong> Master of Computing (expected June 2026), BTech Computer Systems</div>
+                        </div>
+                        <div class="space-y-4">
+                            <div><strong>Certifications:</strong> PMBOK, Lean Six Sigma, ISO 55000, Agile, SQL Server, Linux</div>
+                            <div><strong>Awards:</strong> Shell Project Leadership Excellence • Hexagon Outstanding Execution</div>
+                        </div>
+                    </div>
+                    <a href="https://linkedin.com/in/thabo-makhorole-computer-engineer" target="_blank" 
+                       class="mt-8 inline-flex items-center gap-x-2 text-[#ff6600] font-medium">
+                        View full CV on LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / CONTACT -->
+    <section id="contact" class="py-20 bg-[#001f3f] text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold heading-font mb-6">Ready to de-risk your next technology decision?</h2>
+            <p class="text-xl text-white/80 mb-10">Start with a complimentary 45-minute Tech Decision Diagnostic — no obligation.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:0787180793" 
+                   class="px-10 py-5 bg-white text-[#001f3f] font-semibold rounded-3xl flex items-center justify-center gap-x-3 text-lg">
+                    <i class="fa-solid fa-phone"></i>
+                    078 718 0793
+                </a>
+                <a href="mailto:tbose15@gmail.com" 
+                   class="px-10 py-5 border border-white font-semibold rounded-3xl flex items-center justify-center gap-x-3 text-lg">
+                    <i class="fa-solid fa-envelope"></i>
+                    tbose15@gmail.com
+                </a>
+            </div>
+            
+            <p class="text-white/60 text-sm mt-10">Midrand, Johannesburg • Available for site visits across South Africa</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white/70 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center text-sm">
+            <p>© 2026 IndTech Decision Labs SA • Thabo Samuel Makhorole • All Rights Reserved</p>
+            <p class="mt-2">Built as a single-file GitHub Pages site • Independent • Mining-focused • JET-compliant</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Tailwind
+        function initializeTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        content: [],
+                        theme: {
+                            extend: {
+                                colors: {
+                                    primary: '#ff6600'
+                                }
+                            }
+                        },
+                        ...userConfig,
+                    }
+                },
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#ff6600'
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Run on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const config = initializeTailwind().config()
+            return config
+        })
+    </script>
+</body>
+</html>
