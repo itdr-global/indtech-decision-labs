@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FailureGuard™ SaaS Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        .demo { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="demo bg-gray-50 min-h-screen">
+    <div class="max-w-6xl mx-auto p-8">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-x-3">
+                <div class="w-10 h-10 bg-[#ff6600] rounded-2xl flex items-center justify-center text-white text-2xl font-bold">FG</div>
+                <h1 class="text-3xl font-bold heading-font">FailureGuard™</h1>
+                <span class="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-3xl">LIVE DEMO</span>
+            </div>
+            <div class="text-sm text-gray-500">Waterfall City Mine • Samuel Makhorole Demo</div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Dashboard Summary -->
+            <div class="lg:col-span-3 bg-white rounded-3xl p-6 shadow">
+                <h2 class="text-xl font-semibold mb-4 flex items-center gap-x-2"><i class="fa-solid fa-chart-bar text-[#ff6600]"></i> Dashboard Overview</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-orange-50 p-4 rounded-2xl"><div class="text-orange-600 text-sm">Active Failures</div><div class="text-4xl font-bold text-orange-600">7</div></div>
+                    <div class="bg-red-50 p-4 rounded-2xl"><div class="text-red-600 text-sm">Red Flags (this week)</div><div class="text-4xl font-bold text-red-600">3</div></div>
+                    <div class="bg-green-50 p-4 rounded-2xl"><div class="text-green-600 text-sm">Downtime Reduced</div><div class="text-4xl font-bold text-green-600">28%</div></div>
+                    <div class="bg-blue-50 p-4 rounded-2xl"><div class="text-blue-600 text-sm">Avg Fix Permanence</div><div class="text-4xl font-bold text-blue-600">62%</div></div>
+                </div>
+            </div>
+
+            <!-- Recent Failures -->
+            <div class="lg:col-span-2 bg-white rounded-3xl p-6 shadow">
+                <h3 class="font-semibold mb-4">Recent Failures • Truck HA-42</h3>
+                <table class="w-full text-sm">
+                    <thead><tr class="border-b"><th class="text-left py-2">Failure Type</th><th class="text-left py-2">Date</th><th class="text-left py-2">Impact</th><th class="text-left py-2">Status</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b"><td>Hydraulic Leak</td><td>2026-03-27</td><td>4.2 hrs • 180t lost</td><td class="text-red-600 font-medium">🔴 Red Flag (4x)</td></tr>
+                        <tr class="border-b"><td>Engine Overheat</td><td>2026-03-25</td><td>2.1 hrs • 95t lost</td><td class="text-amber-600">Previous fix failed</td></tr>
+                        <tr><td>Brake Sensor Fault</td><td>2026-03-20</td><td>1.5 hrs • 65t lost</td><td class="text-green-600">Resolved</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="bg-white rounded-3xl p-6 shadow flex flex-col justify-between">
+                <div>
+                    <h3 class="font-semibold mb-4">Quick Actions</h3>
+                    <button onclick="simulateLog()" class="w-full mb-3 bg-[#ff6600] text-white py-4 rounded-2xl font-medium flex items-center justify-center gap-x-3 hover:bg-orange-600">+ Log New Failure</button>
+                    <button onclick="simulateRedFlag()" class="w-full bg-red-600 text-white py-4 rounded-2xl font-medium flex items-center justify-center gap-x-3">View Red Flags (3)</button>
+                </div>
+                <div class="text-xs text-gray-500 mt-auto pt-8">Demo data only • Real SaaS connects to your mine systems via API</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function simulateLog() { alert("✅ New failure logged! Production impact recorded. Reoccurrence counter updated."); }
+        function simulateRedFlag() { alert("🔴 Red Flag raised on Hydraulic Leak (4 occurrences). Fix history shows previous attempt failed. OEM escalation triggered."); }
+        console.log("%cFailureGuard™ SaaS Demo loaded – ready for real integration", "color:#ff6600; font-weight:bold");
+    </script>
+</body>
+</html>
