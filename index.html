@@ -10,72 +10,39 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
         
-        :root {
-            --primary-orange: #ff6600;
-        }
-        
-        .tailwind-ready {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
-        
-        .heading-font {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        
-        .hero-bg {
-            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
-        }
+        :root { --primary-orange: #ff6600; }
+        .tailwind-ready { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        .hero-bg { background: linear-gradient(135deg, #001f3f 0%, #003366 100%); }
 
-        /* Revised Contact Form Styling */
-        .contact-card {
-            background: rgba(255,255,255,0.12);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255,255,255,0.25);
-            box-shadow: 0 25px 50px -12px rgb(0 31 63 / 0.25);
+        .contact-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.25); box-shadow: 0 25px 50px -12px rgb(0 31 63 / 0.25); }
+        .form-input, .form-textarea { background: rgba(255,255,255,0.95); border: 2px solid transparent; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); color: #001f3f; }
+        .form-input:focus, .form-textarea:focus { border-color: #ff6600; box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.25); transform: translateY(-1px); }
+        .submit-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .submit-btn:hover { background-color: #e55a00; transform: translateY(-2px) scale(1.03); box-shadow: 0 10px 15px -3px rgb(255 102 0 / 0.3); }
+
+        .timeline { position: relative; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #ff6600, #ff6600);
+            opacity: 0.2;
         }
-        
-        .form-label {
-            font-size: 0.875rem;
-            font-weight: 600;
-            letter-spacing: 0.025em;
-            color: rgba(255,255,255,0.85);
-        }
-        
-        .form-input {
-            background: rgba(255,255,255,0.95);
-            border: 2px solid transparent;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            color: #001f3f;
-        }
-        
-        .form-input:focus {
-            border-color: #ff6600;
-            box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.25);
-            transform: translateY(-1px);
-        }
-        
-        .form-textarea {
-            background: rgba(255,255,255,0.95);
-            border: 2px solid transparent;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            color: #001f3f;
-            resize: vertical;
-        }
-        
-        .form-textarea:focus {
-            border-color: #ff6600;
-            box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.25);
-            transform: translateY(-1px);
-        }
-        
-        .submit-btn {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .submit-btn:hover {
-            background-color: #e55a00;
-            transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 10px 15px -3px rgb(255 102 0 / 0.3);
+        .timeline-step { position: relative; margin-bottom: 40px; }
+        .timeline-step:last-child { margin-bottom: 0; }
+        .timeline-dot {
+            position: absolute;
+            left: 20px;
+            width: 18px;
+            height: 18px;
+            background: #fff;
+            border: 4px solid #ff6600;
+            border-radius: 50%;
+            z-index: 10;
         }
     </style>
 </head>
@@ -91,21 +58,15 @@
                     <span class="text-2xl font-semibold text-gray-700">Decision Labs SA</span>
                 </div>
             </div>
-            
             <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
                 <a href="#services" class="hover:text-[#ff6600] transition-colors">Services</a>
+                <a href="#journey" class="hover:text-[#ff6600] transition-colors">Your Journey</a>
                 <a href="#why-us" class="hover:text-[#ff6600] transition-colors">Why Us</a>
-                <a href="#pricing" class="hover:text-[#ff6600] transition-colors">Pricing</a>
                 <a href="#about" class="hover:text-[#ff6600] transition-colors">About IndTech</a>
             </div>
-            
-            <div class="flex items-center gap-x-4">
-                <a href="#contact" 
-                   class="px-6 py-2.5 bg-[#ff6600] text-white font-semibold rounded-2xl hover:bg-orange-600 transition-all flex items-center gap-x-2 text-sm">
-                    <i class="fa-solid fa-envelope"></i>
-                    GET IN TOUCH
-                </a>
-            </div>
+            <a href="#contact" class="px-6 py-2.5 bg-[#ff6600] text-white font-semibold rounded-2xl hover:bg-orange-600 transition-all flex items-center gap-x-2 text-sm">
+                <i class="fa-solid fa-envelope"></i> GET IN TOUCH
+            </a>
         </div>
     </nav>
 
@@ -113,49 +74,12 @@
     <header class="hero-bg text-white py-20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-x-2 bg-white/10 text-white text-sm font-medium px-4 py-2 rounded-3xl mb-6">
-                    <span class="relative flex h-3 w-3">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6600] opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-[#ff6600]"></span>
-                    </span>
-                    JUST ENERGY TRANSITION READY
-                </div>
-                
-                <h1 class="text-5xl md:text-6xl font-bold heading-font leading-none tracking-tighter mb-6">
-                    Independent Technology<br>Decision Reviews &amp;<br>Roadmapping for South<br>African Mining &amp; Industry
-                </h1>
-                
-                <p class="text-xl text-gray-200 mb-8">
-                    De-risk your automation, IoT, fleet management and green-tech investments.<br>
-                    Delivered by Samuel Makhorole — ex-Principal Engineer at Komatsu, Epiroc &amp; Hexagon Mining.
-                </p>
-                
+                <div class="inline-flex items-center gap-x-2 bg-white/10 text-white text-sm font-medium px-4 py-2 rounded-3xl mb-6">JUST ENERGY TRANSITION READY</div>
+                <h1 class="text-5xl md:text-6xl font-bold heading-font leading-none tracking-tighter mb-6">Independent Technology Decision Reviews &amp; Roadmapping for South African Mining &amp; Industry</h1>
+                <p class="text-xl text-gray-200 mb-8">De-risk your automation, IoT, fleet management and green-tech investments.<br>Delivered by Samuel Makhorole — ex-Principal Engineer at Komatsu, Epiroc &amp; Hexagon Mining.</p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#contact" 
-                       class="px-8 py-4 bg-white text-[#001f3f] font-semibold rounded-3xl flex items-center gap-x-3 hover:shadow-xl transition-all">
-                        <i class="fa-solid fa-arrow-right"></i>
-                        START WITH A FREE DIAGNOSTIC
-                    </a>
-                    <a href="https://github.com/YOUR-USERNAME/indtech-decision-labs/raw/main/IndTech-Brochure.pdf" 
-                       class="px-8 py-4 border border-white text-white font-semibold rounded-3xl flex items-center gap-x-3 hover:bg-white/10 transition-all">
-                        <i class="fa-solid fa-download"></i>
-                        DOWNLOAD BROCHURE
-                    </a>
-                </div>
-                
-                <div class="mt-12 flex items-center gap-x-8 text-sm">
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-check text-[#ff6600]"></i>
-                        <span>15+ years mining tech delivery</span>
-                    </div>
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-check text-[#ff6600]"></i>
-                        <span>JET &amp; B-BBEE aligned</span>
-                    </div>
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-check text-[#ff6600]"></i>
-                        <span>Truly independent — no vendor ties</span>
-                    </div>
+                    <a href="#contact" class="px-8 py-4 bg-white text-[#001f3f] font-semibold rounded-3xl flex items-center gap-x-3 hover:shadow-xl transition-all"><i class="fa-solid fa-arrow-right"></i> START WITH A FREE DIAGNOSTIC</a>
+                    <a href="https://github.com/YOUR-USERNAME/indtech-decision-labs/raw/main/IndTech-Brochure.pdf" class="px-8 py-4 border border-white text-white font-semibold rounded-3xl flex items-center gap-x-3 hover:bg-white/10 transition-all"><i class="fa-solid fa-download"></i> DOWNLOAD BROCHURE</a>
                 </div>
             </div>
         </div>
@@ -166,43 +90,75 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold heading-font mb-3">Core Services</h2>
-                <p class="text-gray-600 max-w-md mx-auto">Independent validation and strategic planning that actually works in South African mining conditions.</p>
+                <p class="text-gray-600 max-w-md mx-auto">Independent validation, strategic roadmapping, and practical reliability solutions for South African mining.</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all">
-                    <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6">
-                        <i class="fa-solid fa-clipboard-check text-3xl"></i>
-                    </div>
+                    <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6"><i class="fa-solid fa-clipboard-check text-3xl"></i></div>
                     <h3 class="text-2xl font-semibold mb-3">Independent Technology Decision Review</h3>
-                    <p class="text-gray-600 mb-6">Objective technical due diligence, risk assessment, benchmarking and go/no-go recommendation for any automation, IoT, FMS or green-tech solution.</p>
-                    <div class="text-sm font-medium text-[#ff6600]">4–6 weeks • R850k – R3.8M</div>
+                    <p class="text-gray-600 mb-6">Objective validation, risk assessment &amp; go/no-go for automation, IoT, FMS &amp; green-tech solutions.</p>
+                    <div class="text-sm font-medium text-[#ff6600]">Custom investment • Contact for details</div>
                 </div>
-                
+
                 <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all">
-                    <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6">
-                        <i class="fa-solid fa-road text-3xl"></i>
-                    </div>
+                    <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6"><i class="fa-solid fa-road text-3xl"></i></div>
                     <h3 class="text-2xl font-semibold mb-3">Mining-Specific Technology Roadmap</h3>
-                    <p class="text-gray-600 mb-6">1-3-5-10 year roadmap using Cambridge T-Plan/S-Plan framework — tailored for JET, localisation, B-BBEE and operational realities.</p>
-                    <div class="text-sm font-medium text-[#ff6600]">3–5 weeks • R1.2M – R4.5M</div>
+                    <p class="text-gray-600 mb-6">1-3-5-10 year roadmap tailored for JET, localisation, B-BBEE &amp; operational realities.</p>
+                    <div class="text-sm font-medium text-[#ff6600]">Custom investment • Contact for details</div>
                 </div>
-                
+
                 <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all bg-gradient-to-br from-[#ff6600] to-orange-600 text-white">
-                    <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-gem text-3xl"></i>
-                    </div>
+                    <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-6"><i class="fa-solid fa-gem text-3xl"></i></div>
                     <h3 class="text-2xl font-semibold mb-3">Bundled Review + Roadmap</h3>
-                    <p class="text-white/90 mb-6">Most popular package: Full independent validation plus board-ready strategic roadmap with implementation plan.</p>
-                    <div class="text-sm font-medium">8–12 weeks • R2.8M – R6.0M</div>
-                    <span class="inline-block mt-6 text-xs px-4 py-1 bg-white/20 rounded-3xl">RECOMMENDED FOR MAXIMUM VALUE</span>
+                    <p class="text-white/90 mb-6">Most popular: Full validation + board-ready strategic roadmap.</p>
+                    <div class="text-sm font-medium">Custom investment • Contact for details</div>
+                    <span class="inline-block mt-6 text-xs px-4 py-1 bg-white/20 rounded-3xl">RECOMMENDED</span>
+                </div>
+
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6"><i class="fa-solid fa-shield-halved text-3xl"></i></div>
+                    <h3 class="text-2xl font-semibold mb-3">FailureGuard™</h3>
+                    <p class="text-gray-600 mb-6">Onsite OEM failure tracking, reoccurrence flagging, attempted-fix traceability &amp; long-term stability intelligence. Reduces downtime and improves product reliability.</p>
+                    <div class="text-sm font-medium text-[#ff6600]">Custom investment • Contact for details</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENT JOURNEY TIMELINE -->
+    <section id="journey" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font mb-3">Your Journey with IndTech Decision Labs SA</h2>
+                <p class="text-gray-600 max-w-lg mx-auto">A closed-loop process that turns strategic insights into measurable reliability improvements.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline relative pl-14">
+                    <div class="timeline-step flex gap-8">
+                        <div class="flex-shrink-0"><div class="timeline-dot"></div><div class="w-14 h-14 bg-[#ff6600] text-white rounded-2xl flex items-center justify-center text-3xl font-bold mt-1">1</div></div>
+                        <div class="flex-1 pt-3"><h4 class="font-semibold text-xl mb-1">Independent Technology Decision Review</h4><p class="text-gray-600">We validate your proposed technology, identify risks, recurring failures, and integration gaps.</p></div>
+                    </div>
+                    <div class="timeline-step flex gap-8">
+                        <div class="flex-shrink-0"><div class="timeline-dot"></div><div class="w-14 h-14 bg-[#ff6600] text-white rounded-2xl flex items-center justify-center text-3xl font-bold mt-1">2</div></div>
+                        <div class="flex-1 pt-3"><h4 class="font-semibold text-xl mb-1">Mining-Specific Technology Roadmap</h4><p class="text-gray-600">We build a 1-3-5-10 year plan that aligns JET, localisation, and operational needs with the right technologies.</p></div>
+                    </div>
+                    <div class="timeline-step flex gap-8">
+                        <div class="flex-shrink-0"><div class="timeline-dot"></div><div class="w-14 h-14 bg-[#ff6600] text-white rounded-2xl flex items-center justify-center text-3xl font-bold mt-1">3</div></div>
+                        <div class="flex-1 pt-3"><h4 class="font-semibold text-xl mb-1">FailureGuard™ Deployment</h4><p class="text-gray-600">We implement our onsite failure tracking system to capture data, flag reoccurrences, and trace fixes.</p></div>
+                    </div>
+                    <div class="timeline-step flex gap-8">
+                        <div class="flex-shrink-0"><div class="timeline-dot"></div><div class="w-14 h-14 bg-[#ff6600] text-white rounded-2xl flex items-center justify-center text-3xl font-bold mt-1">4</div></div>
+                        <div class="flex-1 pt-3"><h4 class="font-semibold text-xl mb-1">Annual Retainer &amp; Continuous Improvement</h4><p class="text-gray-600">We refresh your roadmap with real failure data, monitor stability, and deliver ongoing value.</p></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- WHY US -->
-    <section id="why-us" class="py-20 bg-gray-50">
+    <section id="why-us" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div>
@@ -214,7 +170,7 @@
                         <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>JET &amp; B-BBEE ready</strong> — Every deliverable addresses localisation, ESG, skills and funding compliance.</div></li>
                     </ul>
                 </div>
-                <div class="bg-white rounded-3xl p-8 shadow-sm">
+                <div class="bg-gray-50 rounded-3xl p-8 shadow-sm">
                     <h3 class="font-semibold text-lg mb-6 flex items-center gap-x-2"><i class="fa-solid fa-award"></i> Recognised Excellence</h3>
                     <div class="space-y-4 text-sm">
                         <div class="flex justify-between"><span class="text-gray-600">Shell Special Recognition Award</span><span class="font-medium">Project Leadership Excellence</span></div>
@@ -226,75 +182,19 @@
         </div>
     </section>
 
-    <!-- PRICING -->
-    <section id="pricing" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold heading-font mb-3">Investment Options</h2>
-                <p class="text-gray-600">Clear, transparent pricing tailored to your needs</p>
-            </div>
-            
-            <div class="overflow-x-auto">
-                <table class="w-full max-w-4xl mx-auto border-collapse">
-                    <thead>
-                        <tr class="border-b-2 border-[#ff6600]">
-                            <th class="text-left py-5 px-6 font-medium">Service Option</th>
-                            <th class="text-left py-5 px-6 font-medium">Description</th>
-                            <th class="text-center py-5 px-6 font-medium">Duration</th>
-                            <th class="text-right py-5 px-6 font-medium">Investment (ex VAT)</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y">
-                        <tr>
-                            <td class="py-6 px-6 font-semibold">Full Bundled Package</td>
-                            <td class="py-6 px-6 text-gray-600">Independent Decision Review + Mining-Specific Technology Roadmap</td>
-                            <td class="py-6 px-6 text-center">8–12 weeks</td>
-                            <td class="py-6 px-6 text-right font-semibold text-[#ff6600]">R2.8M – R6.0M</td>
-                        </tr>
-                        <tr>
-                            <td class="py-6 px-6 font-semibold">Decision Review Only</td>
-                            <td class="py-6 px-6 text-gray-600">Phase 1: Independent technical validation &amp; go/no-go</td>
-                            <td class="py-6 px-6 text-center">4–6 weeks</td>
-                            <td class="py-6 px-6 text-right font-semibold text-[#ff6600]">R0.85M – R3.8M</td>
-                        </tr>
-                        <tr>
-                            <td class="py-6 px-6 font-semibold">Roadmap Only</td>
-                            <td class="py-6 px-6 text-gray-600">Phase 2: Strategic 1-3-5-10 year roadmap</td>
-                            <td class="py-6 px-6 text-center">3–5 weeks</td>
-                            <td class="py-6 px-6 text-right font-semibold text-[#ff6600]">R1.2M – R4.5M</td>
-                        </tr>
-                        <tr>
-                            <td class="py-6 px-6 font-semibold">Annual Retainer</td>
-                            <td class="py-6 px-6 text-gray-600">Roadmap refresh + quarterly tech assurance + JET updates</td>
-                            <td class="py-6 px-6 text-center">12 months</td>
-                            <td class="py-6 px-6 text-right font-semibold text-[#ff6600]">R400k – R950k / year</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <p class="text-center text-xs text-gray-500 mt-8">Exact fee finalised after scoping call • Travel outside Gauteng billed at cost • Prices valid 30 days</p>
-        </div>
-    </section>
-
     <!-- ABOUT INDTECH -->
     <section id="about" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-5">
                     <div class="aspect-square bg-gray-200 rounded-3xl overflow-hidden">
-                        <img src="https://via.placeholder.com/600x600/001f3f/ffffff?text=Samuel+Makhorole" 
-                             alt="Samuel Makhorole – Founder &amp; Principal Consultant" class="w-full h-full object-cover">
+                        <img src="https://via.placeholder.com/600x600/001f3f/ffffff?text=Samuel+Makhorole" alt="Samuel Makhorole – Founder &amp; Principal Consultant" class="w-full h-full object-cover">
                     </div>
                 </div>
                 <div class="md:col-span-7">
                     <h2 class="text-4xl font-bold heading-font mb-6">About IndTech Decision Labs SA</h2>
-                    <p class="text-lg text-gray-700 mb-8">
-                        IndTech Decision Labs SA is a specialist independent consultancy that helps South African mines and heavy industry players make confident, de-risked technology decisions in the era of the Just Energy Transition.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-8">
-                        We combine rigorous technical validation with practical strategic roadmapping — all delivered with deep mining-domain expertise and zero vendor bias.
-                    </p>
+                    <p class="text-lg text-gray-700 mb-8">IndTech Decision Labs SA is a specialist independent consultancy that helps South African mines and heavy industry players make confident, de-risked technology decisions in the era of the Just Energy Transition.</p>
+                    <p class="text-lg text-gray-700 mb-8">We combine rigorous technical validation with practical strategic roadmapping — all delivered with deep mining-domain expertise and zero vendor bias.</p>
                     <div class="grid grid-cols-2 gap-6 text-sm">
                         <div class="space-y-4">
                             <div><strong>Founded &amp; Led by:</strong> Samuel Makhorole — former Principal Systems &amp; Software Engineer at Komatsu Modular Mining, Epiroc, Hexagon Mining, Bosch IoT and Orica Ground Probe</div>
@@ -305,16 +205,13 @@
                             <div><strong>Credentials:</strong> ISO 55000, Lean Six Sigma, PMBOK, Master of Computing (expected 2026), Shell &amp; Hexagon award-winning project leadership</div>
                         </div>
                     </div>
-                    <a href="https://linkedin.com/in/thabo-makhorole-computer-engineer" target="_blank" 
-                       class="mt-8 inline-flex items-center gap-x-2 text-[#ff6600] font-medium">
-                        Connect with Samuel Makhorole on LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
+                    <a href="https://linkedin.com/in/thabo-makhorole-computer-engineer" target="_blank" class="mt-8 inline-flex items-center gap-x-2 text-[#ff6600] font-medium">Connect with Samuel Makhorole on LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- REVISED CONTACT FORM -->
+    <!-- CONTACT FORM -->
     <section id="contact" class="py-20 bg-[#001f3f] text-white">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-10">
@@ -322,71 +219,38 @@
                 <p class="text-xl text-white/80">Start with a complimentary 45-minute Tech Decision Diagnostic — no obligation.</p>
             </div>
             
-            <!-- Revised & Polished Contact Form -->
             <form action="https://formspree.io/f/xqegeaag" method="POST" class="contact-card max-w-2xl mx-auto rounded-3xl p-8 md:p-10">
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="form-label block mb-2">Your Name</label>
-                        <input type="text" name="name" required 
-                               class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400">
-                    </div>
-                    <div>
-                        <label class="form-label block mb-2">Company / Mine</label>
-                        <input type="text" name="company" 
-                               class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400">
-                    </div>
+                    <div><label class="form-label block mb-2">Your Name</label><input type="text" name="name" required class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400"></div>
+                    <div><label class="form-label block mb-2">Company / Mine</label><input type="text" name="company" class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400"></div>
                 </div>
+                <div class="mt-6"><label class="form-label block mb-2">Email Address</label><input type="email" name="email" required class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400"></div>
+                <div class="mt-6"><label class="form-label block mb-2">Phone Number</label><input type="tel" name="phone" class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400"></div>
+                <div class="mt-6"><label class="form-label block mb-2">Tell us about your technology decision or project</label><textarea name="message" rows="5" required class="form-textarea w-full px-6 py-4 rounded-3xl text-base placeholder:text-gray-400"></textarea></div>
                 
-                <div class="mt-6">
-                    <label class="form-label block mb-2">Email Address</label>
-                    <input type="email" name="email" required 
-                           class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400">
-                </div>
+                <button type="submit" class="submit-btn mt-8 w-full bg-[#ff6600] text-white font-semibold py-5 rounded-3xl flex items-center justify-center gap-x-3 text-lg"><i class="fa-solid fa-paper-plane"></i> SEND MESSAGE – LET’S START</button>
                 
-                <div class="mt-6">
-                    <label class="form-label block mb-2">Phone Number</label>
-                    <input type="tel" name="phone" 
-                           class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400">
-                </div>
-                
-                <div class="mt-6">
-                    <label class="form-label block mb-2">Tell us about your technology decision or project</label>
-                    <textarea name="message" rows="5" required 
-                              class="form-textarea w-full px-6 py-4 rounded-3xl text-base placeholder:text-gray-400"></textarea>
-                </div>
-                
-                <button type="submit"
-                        class="submit-btn mt-8 w-full bg-[#ff6600] text-white font-semibold py-5 rounded-3xl flex items-center justify-center gap-x-3 text-lg">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    SEND MESSAGE – LET’S START
-                </button>
-                
-                <p class="text-center text-white/70 text-xs mt-6 flex items-center justify-center gap-x-1">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    We reply within 24 hours • Your information stays private
-                </p>
+                <p class="text-center text-white/70 text-xs mt-6 flex items-center justify-center gap-x-1"><i class="fa-solid fa-shield-halved"></i> We reply within 24 hours • Your information stays private</p>
             </form>
             
-            <div class="flex flex-col sm:flex-row gap-6 justify-center mt-12 text-sm">
-                <a href="tel:0787180793" class="flex items-center justify-center gap-x-3 text-white/80 hover:text-white transition-colors">
-                    <i class="fa-solid fa-phone text-2xl"></i>
-                    078 718 0793
-                </a>
-                <a href="mailto:tbose15@gmail.com" class="flex items-center justify-center gap-x-3 text-white/80 hover:text-white transition-colors">
-                    <i class="fa-solid fa-envelope text-2xl"></i>
-                    tbose15@gmail.com
-                </a>
+            <div class="mt-12 text-center">
+                <div class="inline-flex flex-col items-center text-white/80">
+                    <p class="text-sm font-medium">Allendale Rd, Waterfall City</p>
+                    <p class="text-sm">Midrand, 1662 • Gauteng, South Africa</p>
+                    <a href="tel:0787180793" class="mt-4 flex items-center justify-center gap-x-3 hover:text-white"><i class="fa-solid fa-phone"></i> 078 718 0793</a>
+                    <a href="mailto:tbose15@gmail.com" class="mt-2 flex items-center justify-center gap-x-3 hover:text-white"><i class="fa-solid fa-envelope"></i> tbose15@gmail.com</a>
+                </div>
             </div>
-            
-            <p class="text-center text-white/60 text-sm mt-8">Midrand, Johannesburg • Site visits across South Africa welcome</p>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="bg-gray-900 text-white/70 py-12">
         <div class="max-w-7xl mx-auto px-6 text-center text-sm">
-            <p>© 2026 IndTech Decision Labs SA • Samuel Makhorole • All Rights Reserved</p>
-            <p class="mt-2">Built as a single-file GitHub Pages site • Independent • Mining-focused • JET-compliant</p>
+            <p>IndTech Decision Labs SA • Samuel Makhorole</p>
+            <p class="mt-1">Allendale Rd, Waterfall City, Midrand, 1662 • Gauteng, South Africa</p>
+            <p class="mt-3">© 2026 • Independent • Mining-focused • JET-compliant</p>
+            <p class="mt-2 text-xs">Built as a single-file GitHub Pages site</p>
         </div>
     </footer>
 
