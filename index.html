@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Independent Industrial Technology Decision Reviews & Technology Roadmapping for South African Mining & Heavy Industry. Led by Samuel Makhorole, ex-Principal Engineer at Komatsu, Epiroc & Hexagon Mining.">
+    <title>IndTech Decision Labs SA | Independent Tech Reviews & Roadmapping</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        :root { --primary-orange: #ff6600; }
+        .tailwind-ready { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        .hero-bg { background: linear-gradient(135deg, #001f3f 0%, #003366 100%); }
+
+        .contact-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.25); box-shadow: 0 25px 50px -12px rgb(0 31 63 / 0.25); }
+        .form-input, .form-textarea { background: rgba(255,255,255,0.95); border: 2px solid transparent; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); color: #001f3f; }
+        .form-input:focus, .form-textarea:focus { border-color: #ff6600; box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.25); transform: translateY(-1px); }
+        .submit-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .submit-btn:hover { background-color: #e55a00; transform: translateY(-2px) scale(1.03); box-shadow: 0 10px 15px -3px rgb(255 102 0 / 0.3); }
+
+        .timeline { position: relative; }
+        .timeline::before { content: ''; position: absolute; left: 28px; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, #ff6600, #ff6600); opacity: 0.2; }
+        .timeline-step { position: relative; margin-bottom: 40px; }
+        .timeline-step:last-child { margin-bottom: 0; }
+        .timeline-dot { position: absolute; left: 20px; width: 18px; height: 18px; background: #fff; border: 4px solid #ff6600; border-radius: 50%; z-index: 10; }
+    </style>
+</head>
+<body class="tailwind-ready">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-10 h-10 bg-[#ff6600] rounded-xl flex items-center justify-center text-white font-bold text-2xl">ID</div>
+                <div>
+                    <span class="text-2xl font-bold heading-font tracking-tight">IndTech</span>
+                    <span class="text-2xl font-semibold text-gray-700">Decision Labs SA</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#services" class="hover:text-[#ff6600]">Services</a>
+                <a href="#journey" class="hover:text-[#ff6600]">Your Journey</a>
+                <a href="#why-us" class="hover:text-[#ff6600]">Why Us</a>
+                <a href="#profile" class="hover:text-[#ff6600]">Company Profile</a>
+                <a href="#about" class="hover:text-[#ff6600]">About IndTech</a>
+            </div>
+
+            <a href="#contact" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); return false;" 
+               class="px-6 py-2.5 bg-[#ff6600] text-white font-semibold rounded-2xl hover:bg-orange-600 transition-all flex items-center gap-x-2 text-sm">
+                <i class="fa-solid fa-envelope"></i> GET IN TOUCH
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg text-white py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 text-white text-sm font-medium px-4 py-2 rounded-3xl mb-6">JUST ENERGY TRANSITION READY</div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font leading-none tracking-tighter mb-6">Independent Technology Decision Reviews &amp; Roadmapping for South African Mining &amp; Industry</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8">De-risk your automation, IoT, fleet management and green-tech investments.<br>Delivered by Samuel Makhorole — ex-Principal Engineer at Komatsu, Epiroc &amp; Hexagon Mining.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-white text-[#001f3f] font-semibold rounded-3xl flex items-center gap-x-3 hover:shadow-xl transition-all">START WITH A FREE DIAGNOSTIC</a>
+                    <a href="https://github.com/YOUR-USERNAME/indtech-decision-labs/raw/main/IndTech-Brochure.pdf" class="px-8 py-4 border border-white text-white font-semibold rounded-3xl flex items-center gap-x-3 hover:bg-white/10 transition-all">DOWNLOAD BROCHURE</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font mb-3">Core Services</h2>
+                <p class="text-gray-600 max-w-md mx-auto">Independent validation, strategic roadmapping, and practical reliability solutions for South African mining.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6"><i class="fa-solid fa-clipboard-check text-3xl"></i></div>
+                    <h3 class="text-2xl font-semibold mb-3">Independent Technology Decision Review</h3>
+                    <p class="text-gray-600 mb-6">Objective validation, risk assessment &amp; go/no-go for automation, IoT, FMS &amp; green-tech solutions.</p>
+                    <div class="text-sm font-medium text-[#ff6600]">Custom investment • Contact for details</div>
+                </div>
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6"><i class="fa-solid fa-road text-3xl"></i></div>
+                    <h3 class="text-2xl font-semibold mb-3">Mining-Specific Technology Roadmap</h3>
+                    <p class="text-gray-600 mb-6">1-3-5-10 year roadmap tailored for JET, localisation, B-BBEE &amp; operational realities.</p>
+                    <div class="text-sm font-medium text-[#ff6600]">Custom investment • Contact for details</div>
+                </div>
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all bg-gradient-to-br from-[#ff6600] to-orange-600 text-white">
+                    <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-6"><i class="fa-solid fa-gem text-3xl"></i></div>
+                    <h3 class="text-2xl font-semibold mb-3">Bundled Review + Roadmap</h3>
+                    <p class="text-white/90 mb-6">Most popular: Full validation + board-ready strategic roadmap.</p>
+                    <div class="text-sm font-medium">Custom investment • Contact for details</div>
+                    <span class="inline-block mt-6 text-xs px-4 py-1 bg-white/20 rounded-3xl">RECOMMENDED</span>
+                </div>
+                <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 bg-[#ff6600]/10 rounded-2xl flex items-center justify-center text-[#ff6600] mb-6"><i class="fa-solid fa-shield-halved text-3xl"></i></div>
+                    <h3 class="text-2xl font-semibold mb-3">FailureGuard™</h3>
+                    <p class="text-gray-600 mb-6">Onsite OEM failure tracking, reoccurrence flagging, attempted-fix traceability &amp; long-term stability intelligence. Reduces downtime and improves product reliability.</p>
+                    <div class="text-sm font-medium text-[#ff6600]">Custom investment • Contact for details</div>
+                    <a href="failureguard-demo.html" target="_blank" class="mt-6 inline-flex items-center gap-x-2 text-[#ff6600] font-medium hover:underline">
+                        <i class="fa-solid fa-play-circle text-xl"></i> See Live SaaS Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="journey" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font mb-3">Your Journey with IndTech Decision Labs SA</h2>
+                <p class="text-gray-600 max-w-lg mx-auto">A closed-loop process that turns strategic insights into measurable reliability improvements.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline relative pl-14">
+                    <div class="timeline-step flex gap-8"><div class="flex-shrink-0"><div class="timeline-dot"></div><div class="w-14 h-14 bg-[#ff6600] text-white rounded-2xl flex items-center justify-center text-3xl font-bold mt-1">1</div></div><div class="flex-1 pt-3"><h4 class="font-semibold text-xl mb-1">Independent Technology Decision Review</h4><p class="text-gray-600">We validate your proposed technology, identify risks, recurring failures, and integration gaps.</p></div></div>
+                    <div class="timeline-step flex gap-8"><div class="flex-shrink-0"><div class="timeline-dot"></div><div class="w-14 h-14 bg-[#ff6600] text-white rounded-2xl flex items-center justify-center text-3xl font-bold mt-1">2</div></div><div class="flex-1 pt-3"><h4 class="font-semibold text-xl mb-1">Mining-Specific Technology Roadmap</h4><p class="text-gray-600">We build a 1-3-5-10 year plan that aligns JET, localisation, and operational needs with the right technologies.</p></div></div>
+                    <div class="timeline-step flex gap-8"><div class="flex-shrink-0"><div class="timeline-dot"></div><div class="w-14 h-14 bg-[#ff6600] text-white rounded-2xl flex items-center justify-center text-3xl font-bold mt-1">3</div></div><div class="flex-1 pt-3"><h4 class="font-semibold text-xl mb-1">FailureGuard™ Deployment</h4><p class="text-gray-600">We implement our onsite failure tracking system to capture data, flag reoccurrences, and trace fixes.</p></div></div>
+                    <div class="timeline-step flex gap-8"><div class="flex-shrink-0"><div class="timeline-dot"></div><div class="w-14 h-14 bg-[#ff6600] text-white rounded-2xl flex items-center justify-center text-3xl font-bold mt-1">4</div></div><div class="flex-1 pt-3"><h4 class="font-semibold text-xl mb-1">Annual Retainer &amp; Continuous Improvement</h4><p class="text-gray-600">We refresh your roadmap with real failure data, monitor stability, and deliver ongoing value.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPANY PROFILE -->
+    <section id="profile" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font mb-3">Company Profile</h2>
+            </div>
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm p-10">
+                <h3 class="text-2xl font-semibold mb-8">IndTech Decision Labs SA</h3>
+                <p class="text-lg text-gray-700 mb-8">IndTech Decision Labs SA is a specialist independent consultancy that helps South African mines and heavy industrial operations make confident, de-risked technology decisions in the era of the Just Energy Transition (JET).</p>
+
+                <div class="bg-orange-50 border border-orange-100 rounded-3xl p-8 mb-10">
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Accountability and reliability are important to us. We do what we say we will do. 
+                        If a failure occurs, we monitor it, quantify its impact, and implement a clear plan to resolve it permanently. 
+                        While your OEM or suppliers focus on <strong>performance assurance</strong> of their systems, 
+                        we focus on <strong>value assurance</strong> — the real production recovered, costs avoided, and long-term stability you actually gain. 
+                        Our complete non-affiliation with any OEM guarantees truly unbiased outcomes in every review and recommendation.
+                    </p>
+                </div>
+
+                <h4 class="font-semibold text-xl mb-4">Performance Assurance vs Value Assurance</h4>
+                <div class="overflow-x-auto mb-10">
+                    <table class="w-full text-sm border-collapse">
+                        <thead>
+                            <tr class="border-b-2 border-[#ff6600]">
+                                <th class="text-left py-3 px-4">Aspect</th>
+                                <th class="text-left py-3 px-4">Performance Assurance (OEM / Supplier)</th>
+                                <th class="text-left py-3 px-4">Value Assurance (IndTech Decision Labs SA)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr><td class="py-3 px-4 font-medium">Primary Focus</td><td class="py-3 px-4 text-gray-600">Equipment specifications, uptime, MTBF/MTTR</td><td class="py-3 px-4 text-gray-600">Real business value: production impact, cost, safety, long-term stability</td></tr>
+                            <tr><td class="py-3 px-4 font-medium">Bias</td><td class="py-3 px-4 text-gray-600">Vendor-aligned</td><td class="py-3 px-4 text-gray-600">Completely independent — no vendor affiliations</td></tr>
+                            <tr><td class="py-3 px-4 font-medium">Failure Handling</td><td class="py-3 px-4 text-gray-600">Reports failure and often provides temporary fix</td><td class="py-3 px-4 text-gray-600">Monitors failure, quantifies impact (tonnes/hour lost), flags reoccurrence (&gt;3×), records every attempted fix, and drives permanent resolution</td></tr>
+                            <tr><td class="py-3 px-4 font-medium">Traceability</td><td class="py-3 px-4 text-gray-600">Limited to warranty or contract scope</td><td class="py-3 px-4 text-gray-600">Full long-term traceability of failures, fixes, and outcomes</td></tr>
+                            <tr><td class="py-3 px-4 font-medium">Accountability</td><td class="py-3 px-4 text-gray-600">Limited to equipment performance</td><td class="py-3 px-4 text-gray-600">Full accountability — we monitor, report, and implement resolution plans</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="font-semibold text-xl mb-4">Why Independent Review Matters More Than Internal or OEM-Based Reviews</h4>
+                <p class="text-gray-700">
+                    Internal reviews are often influenced by existing relationships, internal politics, or budget constraints. 
+                    OEM-based reviews are naturally biased toward protecting the supplier’s position and may understate recurring issues that affect your production and profitability.
+                </p>
+                <p class="text-gray-700 mt-4">
+                    An <strong>independent review</strong> delivers truly unbiased, fact-based recommendations, metrics that reflect your actual operational and financial reality, full accountability, and defensible documentation for boards, funders, and regulators.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why-us" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold heading-font mb-6">Why Mines Choose IndTech Decision Labs SA</h2>
+                    <ul class="space-y-6">
+                        <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>Real credibility</strong> — Commissioned the exact systems we now review.</div></li>
+                        <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>Mining-hardened expertise</strong> — 15+ years in live production environments.</div></li>
+                        <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>Truly independent</strong> — No vendor affiliations.</div></li>
+                        <li class="flex gap-x-4"><i class="fa-solid fa-check-circle text-[#ff6600] mt-1"></i><div><strong>JET &amp; B-BBEE ready</strong> — Every deliverable addresses localisation and funding compliance.</div></li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 rounded-3xl p-8 shadow-sm">
+                    <h3 class="font-semibold text-lg mb-6 flex items-center gap-x-2"><i class="fa-solid fa-award"></i> Recognised Excellence</h3>
+                    <div class="space-y-4 text-sm">
+                        <div class="flex justify-between"><span class="text-gray-600">Shell Special Recognition Award</span><span class="font-medium">Project Leadership Excellence</span></div>
+                        <div class="flex justify-between"><span class="text-gray-600">Hexagon Mining Recognition Award</span><span class="font-medium">Outstanding Project Execution</span></div>
+                        <div class="flex justify-between"><span class="text-gray-600">ISO 55000 &amp; Lean Six Sigma Certified</span><span class="font-medium">Asset Management &amp; Process Excellence</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5">
+                    <div class="aspect-square bg-gray-200 rounded-3xl overflow-hidden">
+                        <img src="https://via.placeholder.com/600x600/001f3f/ffffff?text=Samuel+Makhorole" alt="Samuel Makhorole" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:col-span-7">
+                    <h2 class="text-4xl font-bold heading-font mb-6">About IndTech Decision Labs SA</h2>
+                    <p class="text-lg text-gray-700 mb-8">IndTech Decision Labs SA is a specialist independent consultancy that helps South African mines and heavy industrial operations make confident, de-risked technology decisions in the era of the Just Energy Transition (JET).</p>
+                    <p class="text-lg text-gray-700 mb-8">We combine rigorous technical validation with practical strategic roadmapping — all delivered with deep mining-domain expertise and zero vendor bias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 bg-[#001f3f] text-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold heading-font mb-6">Ready to de-risk your next technology decision?</h2>
+                <p class="text-xl text-white/80">Start with a complimentary 45-minute Tech Decision Diagnostic — no obligation.</p>
+            </div>
+            <form action="https://formspree.io/f/xqegeaag" method="POST" class="contact-card max-w-2xl mx-auto rounded-3xl p-8 md:p-10">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div><label class="form-label block mb-2">Your Name</label><input type="text" name="name" required class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400"></div>
+                    <div><label class="form-label block mb-2">Company / Mine</label><input type="text" name="company" class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400"></div>
+                </div>
+                <div class="mt-6"><label class="form-label block mb-2">Email Address</label><input type="email" name="email" required class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400"></div>
+                <div class="mt-6"><label class="form-label block mb-2">Phone Number</label><input type="tel" name="phone" class="form-input w-full px-6 py-4 rounded-2xl text-base placeholder:text-gray-400"></div>
+                <div class="mt-6"><label class="form-label block mb-2">Tell us about your technology decision or project</label><textarea name="message" rows="5" required class="form-textarea w-full px-6 py-4 rounded-3xl text-base placeholder:text-gray-400"></textarea></div>
+                <button type="submit" class="submit-btn mt-8 w-full bg-[#ff6600] text-white font-semibold py-5 rounded-3xl flex items-center justify-center gap-x-3 text-lg"><i class="fa-solid fa-paper-plane"></i> SEND MESSAGE – LET’S START</button>
+                <p class="text-center text-white/70 text-xs mt-6 flex items-center justify-center gap-x-1"><i class="fa-solid fa-shield-halved"></i> We reply within 24 hours • Your information stays private</p>
+            </form>
+            <div class="mt-12 text-center">
+                <div class="inline-flex flex-col items-center text-white/80">
+                    <p class="text-sm font-medium">Allendale Rd, Waterfall City</p>
+                    <p class="text-sm">Midrand, 1662 • Gauteng, South Africa</p>
+                    <a href="tel:0787180793" class="mt-4 flex items-center justify-center gap-x-3 hover:text-white"><i class="fa-solid fa-phone"></i> 078 718 0793</a>
+                    <a href="mailto:tbose15@gmail.com" class="mt-2 flex items-center justify-center gap-x-3 hover:text-white"><i class="fa-solid fa-envelope"></i> tbose15@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white/70 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center text-sm">
+            <p>IndTech Decision Labs SA • Samuel Makhorole</p>
+            <p class="mt-1">Allendale Rd, Waterfall City, Midrand, 1662 • Gauteng, South Africa</p>
+            <p class="mt-3">© 2026 • Independent • Mining-focused • JET-compliant</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = hamburger.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-xmark');
+            });
+        }
+    </script>
+</body>
+</html>
