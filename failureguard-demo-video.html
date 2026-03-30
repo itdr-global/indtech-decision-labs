@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FailureGuard™ SaaS – Live Demo Video with Voice-Over</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        .demo-container { background: linear-gradient(135deg, #001f3f 0%, #003366 100%); }
+    </style>
+</head>
+<body class="demo-container text-white min-h-screen flex items-center justify-center p-6">
+    <div class="max-w-5xl w-full bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl overflow-hidden">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between px-8 py-5 border-b border-white/20">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-[#ff6600] rounded-2xl flex items-center justify-center text-white text-2xl font-bold">FG</div>
+                <span class="text-2xl font-bold heading-font">FailureGuard™ SaaS</span>
+                <span class="px-3 py-1 text-xs bg-green-400 text-green-900 rounded-full font-medium">LIVE DEMO VIDEO</span>
+            </div>
+            <div class="text-sm text-white/70">Waterfall City Mine • Real-Time Value Assurance</div>
+        </div>
+
+        <!-- Video Content Area -->
+        <div id="demo-screen" class="relative h-[520px] flex items-center justify-center overflow-hidden">
+            
+            <!-- Step 1 -->
+            <div id="step-1" class="step absolute inset-0 flex flex-col items-center justify-center text-center transition-opacity duration-700">
+                <h1 class="text-5xl font-bold heading-font mb-4">Real-Time Dashboard</h1>
+                <p class="text-2xl text-white/90 mb-8">See exactly how much production you are losing — right now.</p>
+                <div class="grid grid-cols-4 gap-6 w-full max-w-2xl">
+                    <div class="bg-white/10 rounded-3xl p-6 text-center"><div class="text-4xl font-bold">7</div><div class="text-sm">Active Failures</div></div>
+                    <div class="bg-red-500/20 rounded-3xl p-6 text-center"><div class="text-4xl font-bold text-red-400">3</div><div class="text-sm">Red Flags Today</div></div>
+                    <div class="bg-green-500/20 rounded-3xl p-6 text-center"><div class="text-4xl font-bold text-green-400">28%</div><div class="text-sm">Downtime Reduced</div></div>
+                    <div class="bg-white/10 rounded-3xl p-6 text-center"><div id="live-loss" class="text-4xl font-bold">1,240 t</div><div class="text-sm">Production Lost Today</div></div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="step-2" class="step absolute inset-0 hidden flex-col items-center justify-center transition-opacity duration-700">
+                <h1 class="text-4xl font-bold heading-font mb-6">Recent Technology Failures</h1>
+                <div class="w-full max-w-3xl bg-white/10 rounded-3xl p-6">
+                    <table class="w-full text-left">
+                        <thead><tr class="border-b border-white/30"><th class="py-4">Failure Type</th><th class="py-4">Impact</th><th class="py-4">Production Lost</th><th class="py-4">Status</th></tr></thead>
+                        <tbody>
+                            <tr class="border-b border-white/30"><td class="py-4">Database outage</td><td class="py-4">Critical update failed</td><td class="py-4 text-red-400">85 t (2.1 hrs @ 40 t/h)</td><td class="py-4 text-red-400">🔴 Red Flag (4×)</td></tr>
+                            <tr class="border-b border-white/30"><td class="py-4">Drill pattern update failure</td><td class="py-4">Drill rig idle</td><td class="py-4 text-red-400">210 t (5.25 hrs @ 40 t/h)</td><td class="py-4 text-red-400">🔴 Red Flag (5×)</td></tr>
+                            <tr><td class="py-4">Critical system update failure</td><td class="py-4">Automation halted</td><td class="py-4 text-amber-400">120 t (3 hrs @ 40 t/h)</td><td class="py-4 text-amber-400">Previous fix failed</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div id="step-3" class="step absolute inset-0 hidden flex-col items-center justify-center transition-opacity duration-700">
+                <div class="text-center">
+                    <div class="text-red-400 text-6xl mb-4">🔴</div>
+                    <h1 class="text-4xl font-bold heading-font">Red Flag Raised</h1>
+                    <p class="text-2xl text-white/90 mt-2">Drill pattern failure occurred 5 times</p>
+                    <div class="mt-8 bg-white/10 rounded-3xl p-8 max-w-md">
+                        <p class="font-medium">Previous fix attempt: Temporary workaround only</p>
+                        <p class="text-sm text-white/70 mt-4">Permanent resolution plan now triggered for OEM &amp; mine team</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div id="step-4" class="step absolute inset-0 hidden flex-col items-center justify-center transition-opacity duration-700">
+                <h1 class="text-4xl font-bold heading-font mb-8">Value Assurance Delivered</h1>
+                <div class="grid grid-cols-3 gap-8 max-w-2xl">
+                    <div class="text-center"><div class="text-5xl font-bold text-green-400">68%</div><div class="text-sm">Reoccurrence Reduced</div></div>
+                    <div class="text-center"><div class="text-5xl font-bold text-green-400">R4.2M</div><div class="text-sm">Value Recovered</div></div>
+                    <div class="text-center"><div class="text-5xl font-bold text-green-400">9.4×</div><div class="text-sm">ROI in 30 Days</div></div>
+                </div>
+                <p class="mt-12 text-xl text-white/80">From insight to sustained production value — in one platform.</p>
+            </div>
+        </div>
+
+        <!-- Progress Bar & Controls -->
+        <div class="px-8 py-6 flex items-center justify-between border-t border-white/20">
+            <div class="flex gap-x-8 text-sm">
+                <button onclick="playStep(1)" class="flex items-center gap-x-2 hover:text-[#ff6600]"><i class="fa-solid fa-1"></i> Dashboard</button>
+                <button onclick="playStep(2)" class="flex items-center gap-x-2 hover:text-[#ff6600]"><i class="fa-solid fa-2"></i> Failures</button>
+                <button onclick="playStep(3)" class="flex items-center gap-x-2 hover:text-[#ff6600]"><i class="fa-solid fa-3"></i> Red Flags</button>
+                <button onclick="playStep(4)" class="flex items-center gap-x-2 hover:text-[#ff6600]"><i class="fa-solid fa-4"></i> Results</button>
+            </div>
+            <button onclick="togglePlay()" id="play-btn"
+                    class="flex items-center gap-x-3 px-6 py-3 bg-[#ff6600] hover:bg-orange-600 rounded-2xl font-medium">
+                <i class="fa-solid fa-play" id="play-icon"></i>
+                <span id="play-text">Play Demo Video with Narration</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        let isPlaying = false;
+        let timer = null;
+        let utterance = null;
+
+        const narrationText = {
+            1: "Most vendors show you system performance. We show you the real business value. FailureGuard tracks every failure and immediately calculates the exact production loss in tonnes per hour.",
+            2: "See recurring issues flagged in real time. When the same failure happens more than three times, we raise a red flag and track every attempted fix so you know what actually works permanently.",
+            3: "Red flag raised. Drill pattern failure occurred five times. Previous fix attempt was only temporary. Permanent resolution plan now triggered.",
+            4: "Value Assurance delivered. Sixty-eight percent reoccurrence reduced. Four point two million rand value recovered. Nine point four times ROI in thirty days. From insight to sustained production value — in one platform."
+        };
+
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-ZA'; // South African English
+                utterance.rate = 0.95;
+                utterance.pitch = 1.0;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.step').forEach(s => s.classList.add('hidden'));
+            document.getElementById('step-' + step).classList.remove('hidden');
+            currentStep = step;
+            speak(narrationText[step]);
+        }
+
+        function playStep(step) {
+            showStep(step);
+            if (isPlaying) startAutoPlay();
+        }
+
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            const btn = document.getElementById('play-btn');
+            const icon = document.getElementById('play-icon');
+            const text = document.getElementById('play-text');
+            
+            if (isPlaying) {
+                icon.classList.replace('fa-play', 'fa-pause');
+                text.textContent = 'Pause';
+                startAutoPlay();
+            } else {
+                icon.classList.replace('fa-pause', 'fa-play');
+                text.textContent = 'Play Demo Video with Narration';
+                window.speechSynthesis.cancel();
+                clearTimeout(timer);
+            }
+        }
+
+        function startAutoPlay() {
+            clearTimeout(timer);
+            if (currentStep < 4) {
+                timer = setTimeout(() => {
+                    showStep(currentStep + 1);
+                    startAutoPlay();
+                }, 6500); // 6.5 seconds per step to allow narration to finish
+            } else {
+                isPlaying = false;
+                document.getElementById('play-icon').classList.replace('fa-pause', 'fa-play');
+                document.getElementById('play-text').textContent = 'Play Demo Video with Narration';
+            }
+        }
+
+        // Auto-start the demo with narration when page loads
+        window.onload = () => {
+            setTimeout(() => {
+                showStep(1);
+            }, 800);
+        };
+    </script>
+</body>
+</html>
