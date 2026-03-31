@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FailureGuard™ SaaS - Live Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        .dark-mining { background: #0f172a; color: #e2e8f0; }
+        .sidebar { background: #1e2937; border-right: 1px solid #334155; }
+        .nav-item.active { background-color: #ff6600; color: white; font-weight: 600; }
+        .failure-row { transition: all 0.2s ease; }
+        .failure-row:hover { background-color: #334155; }
+    </style>
+</head>
+<body class="dark-mining min-h-screen flex overflow-hidden">
+
+    <!-- Sidebar -->
+    <div class="sidebar w-72 flex flex-col">
+        <div class="p-6 border-b border-gray-700">
+            <div class="flex items-center gap-x-3">
+                <div class="w-10 h-10 bg-[#ff6600] rounded-2xl flex items-center justify-center text-white text-2xl font-bold">FG</div>
+                <div class="text-2xl font-bold heading-font tracking-tight">FailureGuard™</div>
+            </div>
+            <p class="text-xs text-gray-400 mt-1">Real-Time Value Assurance Platform</p>
+        </div>
+
+        <div class="flex-1 overflow-y-auto py-6 text-sm">
+            <div onclick="showScreen(1)" class="nav-item px-6 py-3 hover:bg-gray-700 cursor-pointer flex items-center gap-x-3 active">
+                <i class="fa-solid fa-house w-5"></i><span>Dashboard</span>
+            </div>
+            <div onclick="showScreen(2)" class="nav-item px-6 py-3 hover:bg-gray-700 cursor-pointer flex items-center gap-x-3">
+                <i class="fa-solid fa-list w-5"></i><span>Failure Log</span>
+            </div>
+            <div onclick="showScreen(3)" class="nav-item px-6 py-3 hover:bg-gray-700 cursor-pointer flex items-center gap-x-3">
+                <i class="fa-solid fa-magnifying-glass w-5"></i><span>Cause Analysis</span>
+            </div>
+            <div onclick="showScreen(4)" class="nav-item px-6 py-3 hover:bg-gray-700 cursor-pointer flex items-center gap-x-3">
+                <i class="fa-solid fa-wrench w-5"></i><span>Fix &amp; Resolve</span>
+            </div>
+            <div onclick="showScreen(5)" class="nav-item px-6 py-3 hover:bg-gray-700 cursor-pointer flex items-center gap-x-3">
+                <i class="fa-solid fa-chart-bar w-5"></i><span>Reports</span>
+            </div>
+            <div onclick="showScreen(6)" class="nav-item px-6 py-3 hover:bg-gray-700 cursor-pointer flex items-center gap-x-3">
+                <i class="fa-solid fa-leaf w-5"></i><span>JET Compliance</span>
+            </div>
+        </div>
+
+        <div class="p-6 border-t border-gray-700 text-xs text-gray-400">
+            Waterfall City Mine • Samuel Makhorole Demo
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 overflow-auto p-8">
+
+        <!-- 1. Dashboard -->
+        <div id="screen-1" class="screen">
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h1 class="text-3xl font-bold heading-font">Operations Dashboard</h1>
+                    <p class="text-gray-400">Real-time Value Assurance • Updated moments ago</p>
+                </div>
+                <button onclick="logNewFailure()" 
+                        class="bg-[#ff6600] hover:bg-orange-600 px-6 py-3 rounded-2xl flex items-center gap-x-2 font-medium text-white">
+                    <i class="fa-solid fa-plus"></i> Log New Failure
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-gray-800 rounded-3xl p-6">
+                    <div class="text-orange-400 text-sm">Active Failures</div>
+                    <div id="active-count" class="text-5xl font-bold mt-2">8</div>
+                </div>
+                <div class="bg-gray-800 rounded-3xl p-6">
+                    <div class="text-red-400 text-sm">Red Flags</div>
+                    <div id="red-count" class="text-5xl font-bold mt-2">4</div>
+                </div>
+                <div class="bg-gray-800 rounded-3xl p-6">
+                    <div class="text-emerald-400 text-sm">Production Lost Today</div>
+                    <div id="total-loss" class="text-5xl font-bold mt-2 text-emerald-400">1,680 t</div>
+                </div>
+                <div class="bg-gray-800 rounded-3xl p-6">
+                    <div class="text-sky-400 text-sm">Fix Permanence</div>
+                    <div class="text-5xl font-bold mt-2 text-sky-400">79%</div>
+                </div>
+            </div>
+
+            <div class="mt-10">
+                <h2 class="font-semibold mb-4">Recent Failures</h2>
+                <div id="recent-log" class="bg-gray-800 rounded-3xl divide-y divide-gray-700"></div>
+            </div>
+        </div>
+
+        <!-- 2. Failure Log -->
+        <div id="screen-2" class="screen hidden">
+            <h1 class="text-3xl font-bold heading-font mb-6">Failure Log</h1>
+            <div id="full-log" class="bg-gray-800 rounded-3xl divide-y divide-gray-700"></div>
+        </div>
+
+        <!-- 3. Cause Analysis -->
+        <div id="screen-3" class="screen hidden">
+            <h1 class="text-3xl font-bold heading-font mb-6">Failure Cause Analysis</h1>
+            <div class="bg-gray-800 rounded-3xl p-8">
+                <p class="font-medium mb-6">Top recurring causes this month</p>
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center"><span>Drill pattern update failure</span><span class="text-red-400 font-medium">5 occurrences</span></div>
+                    <div class="flex justify-between items-center"><span>Database outage (critical update)</span><span class="text-red-400 font-medium">4 occurrences</span></div>
+                    <div class="flex justify-between items-center"><span>Critical system update failure</span><span class="text-amber-400 font-medium">3 occurrences</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Fix & Resolve -->
+        <div id="screen-4" class="screen hidden">
+            <h1 class="text-3xl font-bold heading-font mb-6">Fix &amp; Resolve</h1>
+            <div class="bg-gray-800 rounded-3xl p-8">
+                <p class="font-medium text-emerald-400 mb-4">Open Resolution Plans</p>
+                <div class="p-6 bg-gray-900 rounded-2xl">
+                    <p class="font-medium">Drill pattern failure (5 occurrences)</p>
+                    <p class="text-sm text-gray-400 mt-2">Previous fix was temporary only. Permanent resolution plan assigned.</p>
+                    <button onclick="resolveFailure()" class="mt-6 bg-emerald-600 hover:bg-emerald-500 px-6 py-3 rounded-xl text-sm font-medium">Mark as Permanently Resolved</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Reports -->
+        <div id="screen-5" class="screen hidden">
+            <h1 class="text-3xl font-bold heading-font mb-6">Reports</h1>
+            <div class="bg-gray-800 rounded-3xl p-8">
+                <p class="font-medium mb-6">Value Assurance Summary - March 2026</p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div><p class="text-sm text-gray-400">Production Loss Avoided</p><p class="text-4xl font-bold text-emerald-400">2,340 t</p></div>
+                    <div><p class="text-sm text-gray-400">ROI Delivered</p><p class="text-4xl font-bold text-sky-400">R4.8M</p></div>
+                </div>
+                <p class="mt-8 text-sm text-gray-400">Report ready for board and JET submission</p>
+            </div>
+        </div>
+
+        <!-- 6. JET Compliance -->
+        <div id="screen-6" class="screen hidden">
+            <h1 class="text-3xl font-bold heading-font mb-6">JET Compliance</h1>
+            <div class="bg-gray-800 rounded-3xl p-8">
+                <p class="font-medium mb-6">Just Energy Transition Tracking</p>
+                <div class="space-y-6">
+                    <div class="flex justify-between"><span>Energy waste reduction from resolved failures</span><span class="text-emerald-400">-22%</span></div>
+                    <div class="flex justify-between"><span>Localisation of spares &amp; fixes</span><span class="text-emerald-400">81%</span></div>
+                    <div class="flex justify-between"><span>Skills development hours logged</span><span class="text-emerald-400">148 hours</span></div>
+                </div>
+                <p class="mt-8 text-xs text-gray-400">Data automatically prepared for dtic / IDC JET reporting</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let totalLost = 1680;
+        let activeFailures = 8;
+        let failures = [
+            { type: "Database outage", impact: "Critical update failed", loss: 85, status: "🔴 Red Flag (4×)" },
+            { type: "Drill pattern update failure", impact: "Drill rig idle", loss: 210, status: "🔴 Red Flag (5×)" },
+            { type: "Critical system update failure", impact: "Automation halted", loss: 120, status: "Previous fix failed" }
+        ];
+
+        function renderLog(containerId, limit = 3) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            const display = failures.slice(0, limit);
+            display.forEach(f => {
+                const div = document.createElement('div');
+                div.className = "flex justify-between items-center p-5 failure-row";
+                div.innerHTML = `
+                    <div>
+                        <div class="font-medium">${f.type}</div>
+                        <div class="text-sm text-gray-400">${f.impact}</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-red-400 font-medium">${f.loss} t lost</div>
+                        <div class="text-xs text-gray-400">${f.status}</div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function updateDashboard() {
+            document.getElementById('total-loss').textContent = totalLost.toLocaleString() + " t";
+            document.getElementById('active-count').textContent = activeFailures;
+        }
+
+        function logNewFailure() {
+            const types = ["Hydraulic system leak", "PLC communication failure", "Sensor calibration drift", "Power supply fault", "Drill pattern update failure"];
+            const randomType = types[Math.floor(Math.random() * types.length)];
+            const loss = Math.floor(Math.random() * 180) + 70;
+
+            totalLost += loss;
+            activeFailures++;
+
+            failures.unshift({
+                type: randomType,
+                impact: "Production system affected",
+                loss: loss,
+                status: "New Entry"
+            });
+
+            renderLog('recent-log', 3);
+            renderLog('full-log', 10);
+            updateDashboard();
+
+            alert(`✅ New failure logged:\n${randomType}\nProduction loss added: ${loss} tonnes`);
+        }
+
+        function resolveFailure() {
+            alert("✅ Failure marked as permanently resolved.\nFix permanence rate updated to 82%.");
+        }
+
+        function showScreen(n) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
+            document.getElementById('screen-' + n).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            const navItems = document.querySelectorAll('.nav-item');
+            if (navItems[n-1]) navItems[n-1].classList.add('active');
+        }
+
+        // Initialize
+        window.onload = () => {
+            renderLog('recent-log', 3);
+            renderLog('full-log', 10);
+            updateDashboard();
+            showScreen(1);
+        };
+    </script>
+</body>
+</html>
