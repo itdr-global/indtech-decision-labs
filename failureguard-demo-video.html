@@ -11,7 +11,6 @@
         body { font-family: 'Inter', system_ui, sans-serif; }
         .heading-font { font-family: 'Space Grotesk', sans-serif; }
         .dark-mining { background: #0f172a; color: #e2e8f0; }
-        .demo-step { transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
     </style>
 </head>
 <body class="dark-mining min-h-screen flex items-center justify-center p-6">
@@ -23,101 +22,64 @@
                 <div class="w-9 h-9 bg-[#ff6600] rounded-2xl flex items-center justify-center text-white font-bold">FG</div>
                 <div class="text-2xl font-bold heading-font">FailureGuard™</div>
             </div>
-            <div class="text-sm text-gray-400">Value Assurance Platform • Live Demo</div>
+            <div class="text-sm text-gray-400">Advanced Value Assurance Platform • Male Voice Narration</div>
         </div>
 
-        <!-- Demo Content -->
+        <!-- Demo Area -->
         <div class="p-10">
             <div id="demo-container" class="relative bg-gray-800 rounded-3xl h-[520px] overflow-hidden border border-gray-700">
-                
+
                 <!-- Step 1: Dashboard -->
                 <div id="step-1" class="demo-step absolute inset-0 p-8 flex flex-col">
-                    <h2 class="text-3xl font-bold heading-font mb-2">Operations Dashboard</h2>
-                    <p class="text-gray-400 mb-8">Real-time Value Assurance </p>
-                    <div class="grid grid-cols-4 gap-6">
-                        <div class="bg-gray-900 rounded-3xl p-6"><div class="text-orange-400 text-sm">Active Failures</div><div class="text-5xl font-bold">8</div></div>
-                        <div class="bg-gray-900 rounded-3xl p-6"><div class="text-red-400 text-sm">Red Flags</div><div class="text-5xl font-bold">4</div></div>
-                        <div class="bg-gray-900 rounded-3xl p-6"><div class="text-emerald-400 text-sm">Production Lost</div><div class="text-5xl font-bold text-emerald-400">1,680 t</div></div>
-                        <div class="bg-gray-900 rounded-3xl p-6"><div class="text-sky-400 text-sm">Fix Permanence</div><div class="text-5xl font-bold text-sky-400">79%</div></div>
-                    </div>
-                    <div class="mt-auto text-center text-sm text-gray-400">Recent failures shown below in the live prototype</div>
+                    <h2 class="text-3xl font-bold heading-font mb-2">Welcome to FailureGuard™</h2>
+                    <p class="text-gray-400">The central Operations Dashboard gives you an immediate real-time view of your mine’s performance.</p>
                 </div>
 
                 <!-- Step 2: Failure Log -->
                 <div id="step-2" class="demo-step absolute inset-0 p-8 hidden flex-col">
                     <h2 class="text-3xl font-bold heading-font mb-6">Failure Log</h2>
-                    <div class="bg-gray-900 rounded-3xl p-6 space-y-4">
-                        <div class="flex justify-between p-4 bg-gray-800 rounded-2xl"><span>Drill pattern update failure</span><span class="text-red-400">210 t lost • 5×</span></div>
-                        <div class="flex justify-between p-4 bg-gray-800 rounded-2xl"><span>Database outage</span><span class="text-red-400">85 t lost • 4×</span></div>
-                        <div class="flex justify-between p-4 bg-gray-800 rounded-2xl"><span>Critical system update failure</span><span class="text-amber-400">120 t lost</span></div>
-                    </div>
+                    <p class="text-gray-400">Log failures instantly. The system automatically calculates production loss in tonnes per hour and flags reoccurrences.</p>
                 </div>
 
                 <!-- Step 3: Cause Analysis -->
                 <div id="step-3" class="demo-step absolute inset-0 p-8 hidden flex-col">
-                    <h2 class="text-3xl font-bold heading-font mb-6">Failure Cause Analysis</h2>
-                    <div class="bg-gray-900 rounded-3xl p-8">
-                        <p class="font-medium mb-6">Top recurring causes this month</p>
-                        <ul class="space-y-5 text-lg">
-                            <li class="flex justify-between"><span>Drill pattern update failure</span><span class="text-red-400">5 occurrences</span></li>
-                            <li class="flex justify-between"><span>Database outage</span><span class="text-red-400">4 occurrences</span></li>
-                            <li class="flex justify-between"><span>Critical system update failure</span><span class="text-amber-400">3 occurrences</span></li>
-                        </ul>
-                    </div>
+                    <h2 class="text-3xl font-bold heading-font mb-6">Cause Analysis</h2>
+                    <p class="text-gray-400">Advanced analysis automatically detects recurring patterns, helping you understand root causes before they escalate.</p>
                 </div>
 
                 <!-- Step 4: Fix & Resolve -->
                 <div id="step-4" class="demo-step absolute inset-0 p-8 hidden flex-col">
                     <h2 class="text-3xl font-bold heading-font mb-6">Fix &amp; Resolve</h2>
-                    <div class="bg-gray-900 rounded-3xl p-8">
-                        <p class="font-medium text-emerald-400">Drill pattern failure (5 occurrences)</p>
-                        <p class="text-gray-400 mt-3">Previous fix was temporary. Permanent resolution plan in progress.</p>
-                        <div class="mt-8 bg-emerald-900/50 text-emerald-400 px-6 py-4 rounded-2xl text-center font-medium">Mark as Permanently Resolved</div>
-                    </div>
+                    <p class="text-gray-400">Track every attempted fix and drive permanent resolution with full accountability and traceability.</p>
                 </div>
 
-                <!-- Step 5: Reports -->
+                <!-- Step 5: Advanced Analytics -->
                 <div id="step-5" class="demo-step absolute inset-0 p-8 hidden flex-col">
-                    <h2 class="text-3xl font-bold heading-font mb-6">Reports</h2>
-                    <div class="bg-gray-900 rounded-3xl p-8">
-                        <p class="font-medium mb-6">Value Assurance Summary – March 2026</p>
-                        <div class="grid grid-cols-2 gap-8 text-center">
-                            <div><div class="text-4xl font-bold text-emerald-400">2,340 t</div><div class="text-sm text-gray-400">Production Loss Avoided</div></div>
-                            <div><div class="text-4xl font-bold text-sky-400">R4.8M</div><div class="text-sm text-gray-400">ROI Delivered</div></div>
-                        </div>
-                    </div>
+                    <h2 class="text-3xl font-bold heading-font mb-6">Advanced Analytics</h2>
+                    <p class="text-gray-400">Powerful insights including production loss trends, predictive recommendations, KPI breakdowns, and recurrence heatmaps.</p>
                 </div>
 
-                <!-- Step 6: JET Compliance -->
+                <!-- Step 6: Reporting & JET -->
                 <div id="step-6" class="demo-step absolute inset-0 p-8 hidden flex-col">
-                    <h2 class="text-3xl font-bold heading-font mb-6">JET Compliance</h2>
-                    <div class="bg-gray-900 rounded-3xl p-8">
-                        <p class="font-medium mb-6">Just Energy Transition Tracking</p>
-                        <div class="space-y-6">
-                            <div class="flex justify-between"><span>Energy waste reduction</span><span class="text-emerald-400">-22%</span></div>
-                            <div class="flex justify-between"><span>Localisation of spares</span><span class="text-emerald-400">81%</span></div>
-                            <div class="flex justify-between"><span>Skills development hours</span><span class="text-emerald-400">148 hours</span></div>
-                        </div>
-                    </div>
+                    <h2 class="text-3xl font-bold heading-font mb-6">Reporting &amp; JET Compliance</h2>
+                    <p class="text-gray-400">Generate complete Value Assurance reports with one click — including all metrics and JET compliance data, ready for board review or funding submission.</p>
                 </div>
             </div>
         </div>
 
         <!-- Controls -->
         <div class="bg-gray-950 px-8 py-5 flex items-center justify-between border-t border-gray-700">
-            <button onclick="prevStep()" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-2xl flex items-center gap-x-2">
+            <button onclick="prevStep()" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-2xl flex items-center gap-x-2 text-white">
                 <i class="fa-solid fa-chevron-left"></i> Previous
             </button>
-            
             <div class="flex gap-x-3">
-                <button onclick="goToStep(1)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs">1</button>
-                <button onclick="goToStep(2)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs">2</button>
-                <button onclick="goToStep(3)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs">3</button>
-                <button onclick="goToStep(4)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs">4</button>
-                <button onclick="goToStep(5)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs">5</button>
-                <button onclick="goToStep(6)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs">6</button>
+                <button onclick="goToStep(1)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs text-white">1</button>
+                <button onclick="goToStep(2)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs text-white">2</button>
+                <button onclick="goToStep(3)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs text-white">3</button>
+                <button onclick="goToStep(4)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs text-white">4</button>
+                <button onclick="goToStep(5)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs text-white">5</button>
+                <button onclick="goToStep(6)" class="step-dot w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-xs text-white">6</button>
             </div>
-
             <button onclick="nextStep()" class="px-6 py-3 bg-[#ff6600] hover:bg-orange-600 text-white rounded-2xl flex items-center gap-x-2">
                 Next <i class="fa-solid fa-chevron-right"></i>
             </button>
@@ -132,8 +94,7 @@
             currentStep = Math.max(1, Math.min(totalSteps, step));
             document.querySelectorAll('.demo-step').forEach(s => s.classList.add('hidden'));
             document.getElementById('step-' + currentStep).classList.remove('hidden');
-            
-            // Highlight active dot
+
             document.querySelectorAll('.step-dot').forEach(dot => dot.classList.remove('bg-[#ff6600]', 'text-white'));
             document.querySelectorAll('.step-dot')[currentStep-1].classList.add('bg-[#ff6600]', 'text-white');
         }
@@ -153,29 +114,33 @@
             speakNarration();
         }
 
-        // Voice-over narration (aligned with prototype screens)
+        // Revised narration script with better flow and natural progression
         function speakNarration() {
-            const utterances = {
-                1: "Welcome to FailureGuard. This is the main Operations Dashboard showing active failures, red flags, production lost today, and fix permanence rate.",
-                2: "The Failure Log displays every recorded failure with its impact and production loss in tonnes. New failures can be logged instantly.",
-                3: "Cause Analysis automatically identifies recurring problems, such as drill pattern update failures happening five times this month.",
-                4: "In Fix and Resolve, we track every attempted fix and drive permanent solutions. Previous temporary fixes are clearly flagged.",
-                5: "The Reports section shows Value Assurance outcomes including tonnes saved and ROI delivered, ready for board review.",
-                6: "JET Compliance tracking ensures failures are linked to energy waste, localisation, and skills development for funding reports."
+            const narrationTexts = {
+                1: "Welcome to FailureGuard. This is the central Operations Dashboard, giving you an immediate real-time view of active failures, red flags, production lost today, and your overall fix permanence rate.",
+                2: "Moving to the Failure Log. Here you can instantly record new failures. The system automatically calculates the exact production loss in tonnes per hour and flags any reoccurring issues.",
+                3: "Next is Cause Analysis. The platform automatically detects recurring failure patterns, such as drill pattern updates failing multiple times, so you can address root causes before they impact output.",
+                4: "In Fix and Resolve, every attempted solution is tracked with full traceability. The system ensures fixes are permanent, not just temporary workarounds.",
+                5: "Advanced Analytics delivers powerful insights. You get production loss trend charts, predictive recommendations, detailed KPI breakdowns, and recurrence heatmaps to support data-driven decisions.",
+                6: "Finally, with one click you can generate complete Value Assurance reports. These include all key metrics and JET compliance data, ready for board presentations or funding submissions."
             };
 
-            const utterance = new SpeechSynthesisUtterance(utterances[currentStep]);
+            const utterance = new SpeechSynthesisUtterance(narrationTexts[currentStep]);
             utterance.lang = 'en-ZA';
-            utterance.rate = 0.95;
-            utterance.pitch = 1.05;
+            utterance.rate = 0.94;      // Natural speaking pace
+            utterance.pitch = 0.82;     // Lower pitch for clear male voice
+            utterance.volume = 0.95;
+
             speechSynthesis.cancel();
             speechSynthesis.speak(utterance);
         }
 
-        // Auto-start first narration
+        // Auto-start with narration
         window.onload = () => {
             showStep(1);
-            setTimeout(() => speakNarration(), 800);
+            setTimeout(() => {
+                speakNarration();
+            }, 1000);
         };
     </script>
 </body>
