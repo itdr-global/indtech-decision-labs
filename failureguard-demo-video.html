@@ -11,6 +11,39 @@
         body { font-family: 'Inter', system_ui, sans-serif; }
         .heading-font { font-family: 'Space Grotesk', sans-serif; }
         .dark-mining { background: #0f172a; color: #e2e8f0; }
+        
+        .demo-step {
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        .demo-step.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .counter {
+            transition: all 1.2s ease-out;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .line-draw {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 2.5s ease forwards;
+        }
+        
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
     </style>
 </head>
 <body class="dark-mining min-h-screen flex items-center justify-center p-6">
@@ -22,7 +55,7 @@
                 <div class="w-9 h-9 bg-[#ff6600] rounded-2xl flex items-center justify-center text-white font-bold">FG</div>
                 <div class="text-2xl font-bold heading-font">FailureGuard™</div>
             </div>
-            <div class="text-sm text-gray-400">Advanced Value Assurance Platform • Male Voice Narration</div>
+            <div class="text-sm text-gray-400">Advanced Value Assurance Demo • Male Voice</div>
         </div>
 
         <!-- Demo Area -->
@@ -30,39 +63,54 @@
             <div id="demo-container" class="relative bg-gray-800 rounded-3xl h-[520px] overflow-hidden border border-gray-700">
 
                 <!-- Step 1: Dashboard -->
-                <div id="step-1" class="demo-step absolute inset-0 p-8 flex flex-col">
+                <div id="step-1" class="demo-step absolute inset-0 p-8 flex flex-col active">
                     <h2 class="text-3xl font-bold heading-font mb-2">Welcome to FailureGuard™</h2>
-                    <p class="text-gray-400">The central Operations Dashboard gives you an immediate real-time view of your mine’s performance.</p>
+                    <p class="text-gray-400">The central Operations Dashboard gives you an immediate real-time view of active failures, red flags, production lost today, and overall fix permanence rate.</p>
+                    
+                    <div class="mt-auto grid grid-cols-4 gap-6">
+                        <div class="bg-gray-900 rounded-3xl p-6 text-center">
+                            <div class="text-orange-400 text-sm">Active Failures</div>
+                            <div id="counter-1" class="counter text-5xl font-bold text-orange-400">8</div>
+                        </div>
+                        <div class="bg-gray-900 rounded-3xl p-6 text-center">
+                            <div class="text-red-400 text-sm pulse">Red Flags</div>
+                            <div id="counter-2" class="counter text-5xl font-bold text-red-400">4</div>
+                        </div>
+                        <div class="bg-gray-900 rounded-3xl p-6 text-center">
+                            <div class="text-emerald-400 text-sm">Production Lost</div>
+                            <div id="counter-3" class="counter text-5xl font-bold text-emerald-400">1,680 t</div>
+                        </div>
+                        <div class="bg-gray-900 rounded-3xl p-6 text-center">
+                            <div class="text-sky-400 text-sm">Fix Permanence</div>
+                            <div id="counter-4" class="counter text-5xl font-bold text-sky-400">79%</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Step 2: Failure Log -->
+                <!-- Other steps (same as previous version) -->
                 <div id="step-2" class="demo-step absolute inset-0 p-8 hidden flex-col">
                     <h2 class="text-3xl font-bold heading-font mb-6">Failure Log</h2>
                     <p class="text-gray-400">Log failures instantly. The system automatically calculates production loss in tonnes per hour and flags reoccurrences.</p>
                 </div>
 
-                <!-- Step 3: Cause Analysis -->
                 <div id="step-3" class="demo-step absolute inset-0 p-8 hidden flex-col">
                     <h2 class="text-3xl font-bold heading-font mb-6">Cause Analysis</h2>
-                    <p class="text-gray-400">Advanced analysis automatically detects recurring patterns, helping you understand root causes before they escalate.</p>
+                    <p class="text-gray-400">Advanced analysis automatically detects recurring failure patterns.</p>
                 </div>
 
-                <!-- Step 4: Fix & Resolve -->
                 <div id="step-4" class="demo-step absolute inset-0 p-8 hidden flex-col">
                     <h2 class="text-3xl font-bold heading-font mb-6">Fix &amp; Resolve</h2>
-                    <p class="text-gray-400">Track every attempted fix and drive permanent resolution with full accountability and traceability.</p>
+                    <p class="text-gray-400">Track every attempted fix and enforce permanent resolution with full accountability.</p>
                 </div>
 
-                <!-- Step 5: Advanced Analytics -->
                 <div id="step-5" class="demo-step absolute inset-0 p-8 hidden flex-col">
                     <h2 class="text-3xl font-bold heading-font mb-6">Advanced Analytics</h2>
-                    <p class="text-gray-400">Powerful insights including production loss trends, predictive recommendations, KPI breakdowns, and recurrence heatmaps.</p>
+                    <p class="text-gray-400">Production loss trend charts, predictive insights, KPI breakdowns, and recurrence heatmaps.</p>
                 </div>
 
-                <!-- Step 6: Reporting & JET -->
                 <div id="step-6" class="demo-step absolute inset-0 p-8 hidden flex-col">
                     <h2 class="text-3xl font-bold heading-font mb-6">Reporting &amp; JET Compliance</h2>
-                    <p class="text-gray-400">Generate complete Value Assurance reports with one click — including all metrics and JET compliance data, ready for board review or funding submission.</p>
+                    <p class="text-gray-400">One-click Value Assurance reports with all metrics and JET compliance data, ready for board and funding submission.</p>
                 </div>
             </div>
         </div>
@@ -92,8 +140,13 @@
 
         function showStep(step) {
             currentStep = Math.max(1, Math.min(totalSteps, step));
-            document.querySelectorAll('.demo-step').forEach(s => s.classList.add('hidden'));
-            document.getElementById('step-' + currentStep).classList.remove('hidden');
+            document.querySelectorAll('.demo-step').forEach(s => {
+                s.classList.remove('active');
+                s.classList.add('hidden');
+            });
+            const activeStep = document.getElementById('step-' + currentStep);
+            activeStep.classList.remove('hidden');
+            setTimeout(() => activeStep.classList.add('active'), 50);
 
             document.querySelectorAll('.step-dot').forEach(dot => dot.classList.remove('bg-[#ff6600]', 'text-white'));
             document.querySelectorAll('.step-dot')[currentStep-1].classList.add('bg-[#ff6600]', 'text-white');
@@ -114,33 +167,31 @@
             speakNarration();
         }
 
-        // Revised narration script with better flow and natural progression
+        // Improved narration script with better flow
         function speakNarration() {
             const narrationTexts = {
                 1: "Welcome to FailureGuard. This is the central Operations Dashboard, giving you an immediate real-time view of active failures, red flags, production lost today, and your overall fix permanence rate.",
-                2: "Moving to the Failure Log. Here you can instantly record new failures. The system automatically calculates the exact production loss in tonnes per hour and flags any reoccurring issues.",
-                3: "Next is Cause Analysis. The platform automatically detects recurring failure patterns, such as drill pattern updates failing multiple times, so you can address root causes before they impact output.",
-                4: "In Fix and Resolve, every attempted solution is tracked with full traceability. The system ensures fixes are permanent, not just temporary workarounds.",
-                5: "Advanced Analytics delivers powerful insights. You get production loss trend charts, predictive recommendations, detailed KPI breakdowns, and recurrence heatmaps to support data-driven decisions.",
+                2: "In the Failure Log, every incident is captured instantly. The system automatically calculates the exact production loss in tonnes per hour and flags any reoccurring issues.",
+                3: "Cause Analysis automatically detects recurring failure patterns, such as drill pattern updates failing multiple times, so you can address root causes before they impact output.",
+                4: "The Fix and Resolve module tracks every attempted solution and ensures fixes are permanent, not just temporary workarounds.",
+                5: "Advanced Analytics delivers powerful insights. You get production loss trend charts, predictive recommendations, detailed KPI breakdowns, and recurrence heatmaps.",
                 6: "Finally, with one click you can generate complete Value Assurance reports. These include all key metrics and JET compliance data, ready for board presentations or funding submissions."
             };
 
             const utterance = new SpeechSynthesisUtterance(narrationTexts[currentStep]);
             utterance.lang = 'en-ZA';
-            utterance.rate = 0.94;      // Natural speaking pace
-            utterance.pitch = 0.82;     // Lower pitch for clear male voice
+            utterance.rate = 0.94;
+            utterance.pitch = 0.82;   // Male voice character
             utterance.volume = 0.95;
 
             speechSynthesis.cancel();
             speechSynthesis.speak(utterance);
         }
 
-        // Auto-start with narration
+        // Auto-start
         window.onload = () => {
             showStep(1);
-            setTimeout(() => {
-                speakNarration();
-            }, 1000);
+            setTimeout(() => speakNarration(), 800);
         };
     </script>
 </body>
